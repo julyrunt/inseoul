@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* ----------------------------------------------------------------------------------------------------
+ * 게시판 카테고리 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	nav#category-nav
+ *		ul
+ *			li
+ *				a
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .category-nav ul {
+	padding: 0;
+	margin-left: 5px;
+}
+
+#article-header .category-nav li {
+	display: inline-block;
+}
+
+#article-header .category-nav li:before {
+	content: " | ";
+}
+
+#article-header .category-nav li:first-child:before {
+	content: none;
+}
+#article-header .category-nav a, .category-nav a:visited {
+	color: black;
+	text-decoration: none;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 게시판 검색창 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	#article-header
+ *		.search-box
+ *			form
+ *				input[type="radio"] * 3
+  *				input[type="text"]#keywords
+ *				span#submit
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .search-box {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#article-header .search-box #keywords {
+	width: calc(100% - 210px);
+	height: 30px;
+	margin-left: 10px;
+}
+
+#article-header .search-box .material-symbols-outlined {
+	position: relative;
+	top: 8px;
+	right: 34px;
+	width: 0;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+#article-header .search-box #submit {
+	cursor: pointer;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 게시물 목록 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ *  
+ * ---------------------------------------------------------------------------------------------------- */
+main article {
+	
+}
+
+article ul {
+	min-height: 538px;
+	margin: 0;
+	padding: 0;
+}
+
+article li {
+	display: inline-block;
+	width: 166px;
+	height: 255px;
+	margin: 5px;
+	border-radius: 10px;
+	list-style: none;
+	background-color: grey;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+article li .background-image {
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	background-size: cover;
+	background-position: center;
+	box-sizing: border-box;
+}
+
+article li a {
+	display: block;
+	position: relative;
+	top: -255px;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	padding: 10px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+article li a:visited {
+	color: white;
+}
+
+article li:hover a {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+article li:hover  .background-image {
+	transform: scale(1.2);
+}
+
+.album-title {
+	display: block;
+  	max-width: 150px;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+  	font-weight: bold;
+}
+
+.album-writer {
+	display: inline-block;
+  	max-width: 80px;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+  	font-size: 14px;
+	font-weight: bold;
+}
+
+.album-write-date {
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: text-top;
+}
+
+.album-bottom-info {
+	position: relative;
+	top: -300px;
+	left: 0;
+	width: inherit;
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	vertical-align: text-top;
+}
+
+.album-bottom-info img {
+	position: relative;
+	top: 4px;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+}
+
+/* 글쓰기 버튼 영역 */
+article footer {
+	text-align: right;
+}

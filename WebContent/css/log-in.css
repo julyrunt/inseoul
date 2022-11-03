@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+a, a:hover, a:visited {
+	text-decoration: none;
+	color: #033DBB;
+}
+/*타이틀*/
+.top-title {
+	width: 100%;
+	height: 200px;
+	z-index: 997;
+}
+
+.top-title img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	object-position: center middle;
+	filter: brightness(90%);
+}
+
+.titleBox {
+	position: relative;
+	top: -140px;
+	left: 50%;
+	box-sizing: border-box;
+	width: 600px;
+	height: 80px;
+	margin: 0 50px 0 -300px;
+	padding: 25px;
+	z-index: 998;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 15px;
+}
+
+section {
+	width: 560px;
+	min-height: calc(100% - 624px);
+	margin: 200px auto 0 auto;
+	text-align: center;
+}
+
+.flex-list {
+	display: flex;
+	width: 560px;
+	margin: 0 0 15px 0;
+	padding: 0;
+	border-radius: 25px;
+	background-color: #5189BC;
+}
+
+.flex-list * {
+	box-sizing: border-box;
+}
+
+.flex-list>li {
+	list-style: none;
+	font-family: 'Nanum Gothic', sans-serif;
+	color: navy;
+	font-weight: bold;
+}
+
+.flex-list>li:first-child {
+	width: 130px;
+	padding: 15px;
+	font-size: 26px;
+	color: white;
+}
+
+.flex-list>li:first-child:first-letter {
+	color: #E9FF2D;
+}
+
+.flex-list input, .flex-list select {
+	font-family: 'Nanum Gothic', sans-serif;
+	height: 20pt;
+	border-color: #F0F0F0;
+	border-width: 0.5px;
+	color: navy;
+	font-weight: bold;
+}
+
+.flex-list input[type="text" i], .flex-list input[type="password" i],
+	.flex-list select {
+	width: 400px;
+	height: 40px;
+	margin: 10px 0 10px 0;
+	font-size: 16px;
+}
+
+.flex-list .material-symbols-outlined {
+	position: relative;
+	top: 8px;
+	right: 34px;
+	width: 0;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.flex-list .material-symbols-outlined:hover {
+	color: rgba(0, 0, 0, 0.75);
+	cursor: pointer;
+}
+
+section button, section input[type="submit" i], section input[type="button"
+	i], section input[type="reset" i] {
+	width: 180px;
+	height: 40px;
+	font-family: 'Nanum Gothic', sans-serif;
+	background-color: #E9FF2D;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+	font-weight: bold;
+}
+
+section button:hover, section input[type="submit" i]:hover, section input[type="button"
+	i]:hover {
+	background-color: #ffea2d;
+}
+
+section button:active, section input[type="submit" i]:active, section input[type="button"
+	i]:active {
+	background-color: #E9FF2D;
+}
+
+.manage {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.remember-check {
+	flex-basis: 50%;
+	text-align: left;
+}
+
+.inquiry-links {
+	flex-basis: 50%;
+	text-align: right;
+}

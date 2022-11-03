@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 프로필 네비게이션
+ * ---------------------------------------------------------------------------------------------------- */
+#section-nav li:nth-child(2) {
+	font-weight: bold;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 목록 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	article
+ *		ul#receipt-page
+ *			li.receipt-title
+ *				span
+ *			li.receipt
+ *				span
+ * ---------------------------------------------------------------------------------------------------- */
+ article {
+ 	min-height: 80px;
+ }
+#receipt-page {
+	padding: 0;
+	margin: 10px 0 10px 0;
+	background-color: white;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+} 
+ 
+#receipt-page li {
+	display: flex;
+	width: 100%;
+	height: 32px;
+	line-height: 100%;
+	font-size: 12px;
+	align-items: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#receipt-page .receipt-title {
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color: gray;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#receipt-page .receipt {
+	cursor: pointer;
+}
+
+#receipt-page .receipt:hover {
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+#receipt-page li > span {
+	line-height: normal;
+}
+
+#receipt-page li > span:first-child {
+	flex-basis: 60px;
+	text-align: center; 
+}
+#receipt-page li > span:nth-child(2),
+#receipt-page li > span:nth-child(6),
+#receipt-page li > span:nth-child(7) {
+	flex-basis: 85px;
+	text-align: center;
+}
+#receipt-page li > span:nth-child(3),
+#receipt-page li > span:nth-child(4) {
+	flex-basis: 190px;
+	text-align: center;
+}
+
+#receipt-page li > span:nth-child(5) {
+	flex-basis: 90px;
+	text-align: center;
+}
+
+#receipt-page li > span:nth-child(8) {
+	flex-basis: 30px;
+	text-align: center;
+}
+
+#receipt-page li > span:last-child {
+	flex-grow: 1;
+	text-align: center;
+}

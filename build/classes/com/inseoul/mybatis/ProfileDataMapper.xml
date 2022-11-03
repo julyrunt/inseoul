@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="profile">
+	<!-- 프로필 헤더 배경 이미지 변경 -->
+	<update id="upBackground" parameterType="com.inseoul.vo.UserBean">
+		update `users` set background = #{background} where uid = #{uid}
+	</update>
+	
+	<!-- 회원정보 수정 -->
+	<select id="selGeneralInfo" parameterType="com.inseoul.vo.InfoGeneralBean" resultType="com.inseoul.vo.InfoGeneralBean">
+		select `photo`, `email`, `name`, `nick`, `birth` from `users` where `uid` = #{uid}
+	</select>
+	<update id="upGeneralInfo" parameterType="com.inseoul.vo.InfoGeneralBean">
+		update `users` set `photo` = ifnull(#{photo}, `photo`), `nick` = #{nick} where `uid` = #{uid}
+	</update>
+	<select id="selPasswordCheck" parameterType="com.inseoul.vo.InfoPasswordBean" resultType="java.lang.Integer">
+		select count(*) where `uid` = #{uid} and `pw` = #{pw}
+	</select>
+	<update id="upPasswordInfo" parameterType="com.inseoul.vo.InfoPasswordBean">
+		update `users` set `pw` = #{pw} where `uid` = #{uid}
+	</update>
+	<select id="selAddressInfo" parameterType="com.inseoul.vo.InfoAddressBean" resultType="com.inseoul.vo.InfoAddressBean">
+		select `nation`, `phone`, `addr`, `detail` from `users` where `uid` = #{uid}
+	</select>
+	<update id="upAddressInfo" parameterType="com.inseoul.vo.InfoAddressBean">
+		update `users` set `nation` = #{nation}, `phone` = #{phone}, `addr` = #{addr}, `detail` = #{detail} where `uid` = #{uid}
+	</update>
+	<select id="selQuestionInfo" parameterType="com.inseoul.vo.InfoQuestionBean" resultType="com.inseoul.vo.InfoQuestionBean">
+		select `question`, `answer` from `users` where `uid` = #{uid}
+	</select>
+	<update id="upQuestionInfo" parameterType="com.inseoul.vo.InfoQuestionBean">
+		update `users` set `question` = #{question}, `answer` = #{answer} where `uid` = #{uid}
+	</update>
+	<delete id="delUserInfo" parameterType="com.inseoul.vo.UserBean">
+		delete from `users` where `uid` = #{uid} and `pw` = #{pw};
+	</delete>
+	
+	<!-- 결제내역 -->
+	<select id="selReceiptCount" parameterType="com.inseoul.vo.PageInfo" resultType="java.lang.Integer">
+		select count(*) 
+		from `lodgment_reservation` 
+		where `reservation_uid` = #{id}
+		<![CDATA[ 
+		and 
+		(
+			#{category} = 'all' or  
+			(#{category} = 'schedule' and `reservation_checkout` >= current_date() ) or  
+			(#{category} = 'expired' and `reservation_checkout` < current_date() ) 
+		 )
+		 ]]>
+	</select>
+	<select id="selReceiptList" parameterType="com.inseoul.vo.PageInfo" resultType="com.inseoul.vo.ReceiptBean">
+		select 
+		    l.*,
+		    u.`name` username,
+		    h.`name` hotelname,
+		    r.`roomname`
+		from `lodgment_reservation` l 
+		left join `users` u on u.`uid` = l.`reservation_uid`
+		left join `rooms` r on r.`roomid` = l.`roomid`
+		left join `lodgments` h on h.`hid` = r.`hid`
+		where `reservation_uid` = #{id}
+		<![CDATA[ 
+		and 
+		(
+			#{category} = 'all' or  
+			(#{category} = 'schedule' and `reservation_checkout` >= current_date() ) or  
+			(#{category} = 'expired' and `reservation_checkout` < current_date() ) 
+		 )
+		 ]]> 
+		order by `reservation_num` desc 
+		limit #{startRow}, #{limit}
+	</select>
+	<select id="selReceiptDetail" parameterType="com.inseoul.vo.ReceiptBean" resultType="com.inseoul.vo.ReceiptBean">
+		select 
+		    l.*,
+		    u.`name` username,
+		    u.`phone`,
+		    h.`name` hotelname,
+		    r.`roomname`
+		from `lodgment_reservation` l 
+		left join `users` u on u.`uid` = l.`reservation_uid`
+		left join `rooms` r on r.`roomid` = l.`roomid`
+		left join `lodgments` h on h.`hid` = r.`hid`
+		where 
+			`reservation_num` = #{reservation_num} and 
+			`reservation_uid` = #{reservation_uid}
+	</select>
+	
+	<!-- 그룹 관리 -->
+	<select id="selOwnGroupCount" parameterType="com.inseoul.vo.PageInfo" resultType="java.lang.Integer">
+		select count(*)
+		from `with_board`  
+		where `uid` = #{id}
+	</select>
+	<select id="selOwnGroupList" parameterType="com.inseoul.vo.PageInfo" resultType="com.inseoul.vo.GroupListBean">
+		select 
+			a.*, 
+			u.`nick`,
+			(select count(*) from `with_application` sub where sub.`wid` = a.`wid` and state = 1) `usercount` 
+		from `with_board` a 
+		left join `users` u on a.`uid` = u.`uid` 
+		where a.`uid` = #{id}
+		order by a.`wid` desc
+		limit #{startRow}, #{limit}
+	</select>
+	<select id="selMyGroupCount" parameterType="com.inseoul.vo.PageInfo" resultType="java.lang.Integer">
+		select 
+			count(*)
+		from `with_application` a 
+		left join `with_board` b on a.`wid` = b.`wid`  
+		where 
+			a.`uid` = #{id} and 
+		    a.`state` = 1
+	</select>
+	<select id="selMyGroupList" parameterType="com.inseoul.vo.PageInfo" resultType="com.inseoul.vo.GroupListBean">
+		select 
+			a.`apply_date`, 
+			b.*, 
+			u.`nick`,
+			(select count(*) from `with_application` sub where sub.`wid` = a.`wid` and state = 1) `usercount`
+		from `with_application` a 
+		left join `with_board` b on a.`wid` = b.`wid` 
+		left join `users` u on b.`uid` = u.`uid` 
+		where 
+			a.`uid` = #{id} and 
+		    a.`state` = 1
+		order by a.`apply_date` desc, b.`wid` desc
+		limit #{startRow}, #{limit}
+	</select>
+	<select id="selApplyGroupCount" parameterType="com.inseoul.vo.PageInfo" resultType="java.lang.Integer">
+		select 
+			count(*)
+		from `with_application` a 
+		left join `with_board` b on a.`wid` = b.`wid`
+		where 
+			a.`uid` = #{id} and 
+		    a.`state` = 0
+	</select>
+	<select id="selApplyGroupList" parameterType="com.inseoul.vo.PageInfo" resultType="com.inseoul.vo.GroupListBean">
+		select 
+			a.`apply_date`, 
+			b.*, 
+			u.`nick`,
+			(select count(*) from `with_application` sub where sub.`wid` = a.`wid` and state = 1) `usercount`
+		from `with_application` a 
+		left join `with_board` b on a.`wid` = b.`wid`
+		left join `users` u on b.`uid` = u.`uid`  
+		where 
+			a.`uid` = #{id} and 
+		    a.`state` = 0
+		order by a.`apply_date` desc, b.`wid` desc
+		limit #{startRow}, #{limit}
+	</select>
+	<select id="selGroupById" parameterType="com.inseoul.vo.PageInfo" resultType="com.inseoul.vo.GroupListBean">
+		select 
+			a.*, 
+			u.`nick`,
+			(select count(*) from `with_application` sub where sub.`wid` = a.`wid` and state = 1) `usercount` 
+		from `with_board` a 
+		left join `users` u on a.`uid` = u.`uid` 
+		where a.`wid` = #{group}
+		order by a.`wid` desc
+		limit 0, 1
+	</select>
+	<delete id="delGroup" parameterType="com.inseoul.vo.PageInfo">
+		delete from `with_board` where wid = #{group} and uid = #{id} 
+	</delete>
+	<delete id="delGroupMember" parameterType="com.inseoul.vo.PageInfo">
+		delete from `with_application` where wid = #{group} and uid = #{id} 
+	</delete>
+	
+	<!-- 타임라인 -->
+	<select id="selTimelineCount" parameterType="com.inseoul.vo.PageInfo" resultType="java.lang.Integer">
+		select sum(`count`) from 
+			(
+		    select count(*) `count` 
+			from `albums` 
+			where `albums`.uid = #{id} || `albums`.uid in (select following from `friends` where follower = #{id}) 
+			union all 
+		    select count(*) `count` 
+			from `album-recommend` 
+			where `album-recommend`.uid = #{id} || `album-recommend`.uid in (select following from `friends` where follower = #{id}) 
+			union all 
+		    select count(*) `count` 
+			from `buckets` 
+			where `buckets`.uid = #{id} || `buckets`.uid in (select following from `friends` where follower = #{id}) 
+			union all 
+		    select count(*) `count` 
+			from `bucket-recommend` 
+			where `bucket-recommend`.uid = #{id} || `bucket-recommend`.uid in (select following from `friends` where follower = #{id})
+			union all 
+		    select count(*) `count` 
+			from `travels` 
+			where `travels`.uid = #{id} || `travels`.uid in (select following from `friends` where follower = #{id}) 
+			union all 
+		    select count(*) `count` 
+			from `travels-recommend` 
+			where `travels-recommend`.uid = #{id} || `travels-recommend`.uid in (select following from `friends` where follower = #{id})
+		    union all 
+		    select count(*) `count` 
+			from `routemaps` 
+			where `routemaps`.uid = #{id} || `routemaps`.uid in (select following from `friends` where follower = #{id}) 
+			union all 
+		    select count(*) `count` 
+			from `routemap-recommend` 
+			where `routemap-recommend`.uid = #{id} || `routemap-recommend`.uid in (select following from `friends` where follower = #{id})
+		    ) `timeline`
+	</select>
+	<select id="selTimelineList" parameterType="com.inseoul.vo.PageInfo" resultType="com.inseoul.vo.TimelineBean">
+		select 'albums' `type`, `albums`.aid `articleId`, `albums`.title `title`, `albums`.writedate `date`, `albums`.img01 `thumbnail`, `albums`.uid `userId`, `users`.nick `nick`, `users`.photo `photo`
+		from `albums`
+		left join `users`  on `users`.uid = `albums`.uid 
+		where `albums`.uid = #{id} || `albums`.uid in (select following from `friends` where follower = #{id}) 
+		union all 
+		select 'album-recommend' `type`, `album-recommend`.aid `articleId`, `albums`.title `title`, `album-recommend`.rdate `date`, `albums`.img01 `thumbnail`, `album-recommend`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `album-recommend` 
+		left join `users` on `users`.uid = `album-recommend`.uid 
+		left join `albums` on `albums`.aid = `album-recommend`.aid 
+		where `album-recommend`.uid = #{id} || `album-recommend`.uid in (select following from `friends` where follower = #{id}) 
+		union all 
+		select 'buckets' `type`, `buckets`.bid `articleId`, `buckets`.item `title`, `buckets`.writedate `date`, `locations`.img `thumbnail`, `buckets`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `buckets` 
+		left join `users` on `users`.uid = `buckets`.uid 
+		left join `locations` on `locations`.lid = `buckets`.lid 
+		where `buckets`.uid = #{id} || `buckets`.uid in (select following from `friends` where follower = #{id}) 
+		union all 
+		select 'bucket-recommend' `type`, `bucket-recommend`.bid `articleId`, `buckets`.item `title`, `bucket-recommend`.rdate `date`, `locations`.img `thumbnail`, `bucket-recommend`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `bucket-recommend` 
+		left join `users` on `users`.uid = `bucket-recommend`.uid 
+		left join `buckets` on `buckets`.bid = `bucket-recommend`.bid 
+		left join `locations` on `locations`.lid = `buckets`.lid 
+		where `bucket-recommend`.uid = #{id} || `bucket-recommend`.uid in (select following from `friends` where follower = #{id}) 
+		union all 
+		select 'travels' `type`, `travels`.tid `articleId`, `travels`.title `title`, `travels`.`date` `date`, `travels`.img01 `thumbnail`, `travels`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `travels` 
+		left join `users` on `users`.uid = `travels`.uid 
+		left join `locations` on `locations`.lid = `travels`.lid 
+		where `travels`.uid = #{id} || `travels`.uid in (select following from `friends` where follower = #{id}) 
+		union all 
+		select 'travels-recommend' `type`, `travels-recommend`.tid `articleId`, `travels`.title `title`, `travels-recommend`.rdate `date`, `travels`.img01 `thumbnail`, `travels-recommend`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `travels-recommend` 
+		left join `users` on `users`.uid = `travels-recommend`.uid 
+		left join `travels` on `travels`.tid = `travels-recommend`.tid 
+		left join `locations` on `locations`.lid = `travels`.lid 
+		where `travels-recommend`.uid = #{id} || `travels-recommend`.uid in (select following from `friends` where follower = #{id})
+		union all 
+		select 'routemaps' `type`, `routemaps`.mid `articleId`, `routemaps`.title `title`, `routemaps`.writeday `date`, `routemaps`.img `thumbnail`, `routemaps`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `routemaps` 
+		left join `users` on `users`.uid = `routemaps`.uid 
+		where `routemaps`.uid = #{id} || `routemaps`.uid in (select following from `friends` where follower = #{id}) 
+		union all 
+		select 'routemap-recommend' `type`, `routemap-recommend`.mid `articleId`, `routemaps`.title `title`, `routemap-recommend`.rdate `date`, `routemaps`.img `thumbnail`, `routemap-recommend`.uid `userId`, `users`.nick `nick`, `users`.photo `photo` 
+		from `routemap-recommend` 
+		left join `users` on `users`.uid = `routemap-recommend`.uid 
+		left join `routemaps` on `routemaps`.mid = `routemap-recommend`.mid 
+		where `routemap-recommend`.uid = #{id} || `routemap-recommend`.uid in (select following from `friends` where follower = #{id})
+		order by `date` desc 
+		limit #{startRow}, #{limit}
+	</select>
+</mapper>

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* ----------------------------------------------------------------------------------------------------
+ * 프로필 페이지 공통 스타일 시트
+ * ----------------------------------------------------------------------------------------------------  
+ *	header#page-header
+ * ----------------------------------------------------------------------------------------------------  
+ *		header#main-header
+ *		main
+ *			section
+ *				header#article-header
+ *					h1
+ *				article
+ *				footer#article-footer
+ *			nav#section-nav
+ * ---------------------------------------------------------------------------------------------------- */
+#main-header {
+	height: 200px;
+	background-color: grey;
+	box-sizing: border-box;
+}
+
+main {
+	display: flex;
+	width: 1200px;
+	min-height: calc(100% - 424px);
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+main * {
+	box-sizing: border-box;
+}
+
+main section {
+	flex-basis: 1000px;
+	min-height: inherit;
+	background-color: #F9F9F9;
+	padding: 50px 50px 100px 50px;
+}
+
+#section-nav {
+	flex-basis: 200px;
+	background-color: #F9F9F9;
+	border-left: 3px solid white;
+}
+
+#article-header {
+	width: inherit;
+}
+
+#article-header h1 {
+	padding: 10px;
+	padding-left: 25px;
+	margin: 0;
+	background-color: #5189BC;
+	border-radius: 25px;
+	color: white;
+}
+
+#article-header h1:first-letter {
+	color: #E9FF2D;
+}
+
+main article {
+	width: inherit;
+	margin-bottom: 25px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+main article a, main article a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#article-footer {
+	width: inherit;
+}

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+input {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+article header {
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#title {
+	width: calc(100% - 235px);
+	height: 32px;
+	margin-left: 35px;
+}
+
+/* jquery ui 자동완성 콤보박스 */
+.custom-combobox {
+	position: relative;
+	display: inline-block;
+}
+
+.custom-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+}
+
+.custom-combobox-input {
+	width: 200px;
+	height: 32px;
+	margin: 0;
+	padding: 5px 10px;
+}
+
+.custom-combobox .ui-button {
+	position: absolute;
+	top: 0;
+	height: 32px;
+}
+
+.ui-autocomplete.ui-front {
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1000 !important;
+}
+
+/* 파일 첨부 */
+#file-input-list {
+	display: flex;
+	flex-wrap: wrap;
+	width: inherit;
+	padding: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.file-input {
+	width: calc(100%/ 3);
+	margin-bottom: 10px;
+	list-style: none;
+	box-sizing: border-box;
+	padding: 1px;
+}
+
+.file-input>div {
+	width: calc(100% - 2px);
+	height: 150px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 5px;
+	background-position: center;
+	background-size: cover;
+}
+
+textarea {
+	width: 100%;
+	height: 150px;
+	resize: vertical;
+	margin-bottom: 10px;
+}
+
+article footer {
+	text-align: right;
+}
+
+.file-button {
+	display: inline-block;
+	width: 74px;
+	overflow: hidden;
+}
+
+.file-button + span {
+	position: relative;
+	top: -3px;
+	display: inline-block;
+	font-size: 13px;
+	vertical-align: text-top;
+}
+
+input[type=button i],
+input[type=submit i] {
+	height: 24px;
+}

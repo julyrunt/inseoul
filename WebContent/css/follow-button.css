@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* ----------------------------------------------------------------------------------------------------
+ * 팔로우 버튼
+ * ---------------------------------------------------------------------------------------------------- 
+ * span#follow-button
+ * ----------------------------------------------------------------------------------------------------
+ *		span.timeline
+ *			span.material-symbols-outlined
+ *			span.symbol-label
+ * ----------------------------------------------------------------------------------------------------
+ *		span.follow-remove
+ *			span.material-symbols-outlined
+ *			span.symbol-label			
+ * ----------------------------------------------------------------------------------------------------
+ *		span.follow-add
+ *			span.material-symbols-outlined
+ *			span.symbol-label
+ * ---------------------------------------------------------------------------------------------------- */
+#follow-button .timeline,
+#follow-button .follow-add, #follow-button .follow-remove {
+	width: 100px;
+	height: 38px;
+	margin-top: 15px;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#follow-button .follow-add {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+#follow-button .follow-remove:hover {
+	color: red;
+	background-color: rgba(255, 0, 0, 0.1);
+	cursor: pointer;
+}
+
+#follow-button .timeline:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+#follow-button .timeline .material-symbols-outlined,
+#follow-button .follow-add .material-symbols-outlined,
+#follow-button .follow-remove .material-symbols-outlined {
+	display: inline-block;
+	position: relative;
+	top: 7px;
+	border-radius: 5px;
+}
+
+#follow-button .timeline .symbol-label,
+#follow-button .follow-add .symbol-label,
+#follow-button .follow-remove .symbol-label {
+	display: inline-block;
+	position: relative;
+}

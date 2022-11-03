@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 프로필 네비게이션
+ * ---------------------------------------------------------------------------------------------------- */
+#section-nav li:last-child {
+	font-weight: bold;
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 카테고리 버튼 스타일
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	header#article-header
+ *		nav.board-nav
+ *			ul
+ *				li
+ *					a
+ *						span
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .board-nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav li {
+	flex-basis: calc(100%/ 4);
+	height: 75px;
+	list-style: none;
+}
+
+#article-header .board-nav li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav a, #article-header .board-nav a:visited {
+	display: block;
+	width: inherit;
+	height: inherit;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#article-header .board-nav span {
+	display: block;
+	position: relative;
+	top: calc(( 100% - 20px)/2);
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 최소 높이값
+ * ---------------------------------------------------------------------------------------------------- */
+main article {
+	min-height: calc(483px - 101px);
+	box-sizing: border-box;
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 본문 양식 스타일 시트
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	article
+ *		form
+ *			div.input-label
+ *			div.input-field
+ * ----------------------------------------------------------------------------------------------------
+ *				select
+ * ----------------------------------------------------------------------------------------------------
+ * 				input[type="text"]
+ * ----------------------------------------------------------------------------------------------------
+ * 				input[type="password"].pw || input[type="text"].pw
+ *				span.pw-visibility.material-symbols-outlined
+ * ----------------------------------------------------------------------------------------------------
+ *			input[type="submit"]
+ * ---------------------------------------------------------------------------------------------------- */
+article {
+	padding-top: 50px;
+}
+
+article form {
+	width: 50%;
+	margin: 0 auto 0 auto;
+	text-align: right;
+}
+
+article form * {
+	text-align: left;
+}
+
+article form .input-label {
+	font-weight: bold;
+}
+
+article form .input-field {
+	height: 32px;
+	margin: 0;
+	margin-top: 10px;
+}
+
+article form .input-alert {
+	font-size: 12px;
+	margin: 3px 0 10px 0;
+}
+
+article form .material-symbols-outlined {
+	position: relative;
+	top: -28px;
+	left: calc(100% - 34px);
+	width: 0;
+	color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+article form input[type="text"], article form input[type="password"] {
+	width: 100%;
+	height: 32px;
+}
+
+article form input[type="submit"] {
+	height: 24px;
+	margin-bottom: 10px;
+}

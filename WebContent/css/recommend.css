@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 추천 버튼 스타일 시트
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	div#recommend
+ *		span.material-symbols-outlined
+ * ---------------------------------------------------------------------------------------------------- */
+#recommend {
+	margin: 25px 0 10px 0;
+	text-align: center;
+}
+
+#recommend span {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	box-sizing: border-box;
+	font-size: 32px;
+	padding: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+#recommend span:hover {
+	color: red;
+	background-color: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}

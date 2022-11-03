@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 카테고리 버튼 스타일
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	header#article-header
+ *		nav.board-nav
+ *			ul
+ *				li
+ *					a
+ *						span
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .board-nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav li {
+	flex-basis: calc(100% / 3);
+	height: 75px;
+	list-style: none;
+}
+
+#article-header .board-nav li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav a, #article-header .board-nav a:visited
+	{
+	display: block;
+	width: inherit;
+	height: inherit;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#article-header .board-nav span {
+	display: block;
+	position: relative;
+	top: calc(( 100% - 20px)/2);
+}

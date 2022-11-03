@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* 본문 */
+.album-writer-photo {
+	position: relative;
+	top: 10px;
+	width: 32px;
+	height: 32px;
+	border-radius: 100%;
+}
+
+.album-writer-nick {
+	font-weight: bold;
+}
+
+.album-write-date {
+	margin-left: 10px;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.album-info {
+	float: right;
+	font-size: 12px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+#album-manage {
+	text-align: right;
+}
+
+#album-pictures {
+	width: 100%;
+	margin: 10px 0 10px 0;
+	text-align: justify;
+}
+
+#album-picture-main {
+	width: 906.672px;
+	height: 680px;
+	margin-bottom: 5px;
+	object-fit: contain;
+	background-color: black;
+}
+
+#album-picture-thumbs {
+	width: inherit;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#album-picture-thumbs img {
+	width: 177.328px;
+	height: 133px;
+	object-fit: contain;
+	background-color: black;
+	cursor: pointer;
+}
+
+#album-contents {
+	padding: 10px;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+article {
+	padding-top: 25px;
+}
+
+article .article-title {
+	margin-bottom: 5px;
+}
+
+article .article-title > span {
+	font-weight: bold;
+}
+
+article .location-info {
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+	padding: 10px;
+}
+
+article .location-info .material-symbols-outlined {
+	position: relative;
+	top: 8px;
+}

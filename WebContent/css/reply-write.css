@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 댓글 작성 폼 스타일 시트
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	div#reply-write
+ *		img
+ *		textarea
+ *		input[type='button' i].reply-submit
+ * ---------------------------------------------------------------------------------------------------- */
+#reply-write {
+	display: flex;
+	width: 100% - 90px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#reply-write img {
+	width: 72px;
+	height: 72px;
+	border-radius: 100%;
+}
+
+#reply-write textarea {
+	border: none;
+	resize: none;
+	width: calc(100% - 150px);
+	height: 72px;
+	margin: 0 5px 0 5px;
+}
+
+#reply-write .reply-submit {
+	width: 72px;
+	height: 72px;
+}

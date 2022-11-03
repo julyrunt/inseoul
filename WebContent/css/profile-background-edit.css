@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+article {
+	margin-bottom: 5px;
+}
+
+article #preview {
+	width: 600px;
+	height: 300px;
+	background-size: cover;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 5px;
+}
+
+input[type=file] {
+	width: 294px;
+}
+
+#article-footer {
+	text-align: right;
+}

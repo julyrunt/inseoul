@@ -1,0 +1,269 @@
+/*타이틀*/
+.top-title {
+	width: 100%;
+	height: 200px;
+	z-index: 997;
+}
+
+.top-title img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	object-position: center middle;
+	filter: brightness(90%);
+}
+
+.titleBox {
+	position: relative;
+	top: -140px;
+	left: 50%;
+	box-sizing: border-box;
+	width: 600px;
+	height: 80px;
+	margin: 0 50px 0 -300px;
+	padding: 25px;
+	z-index: 998;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 15px;
+}
+/*회원가입 양식*/
+section {
+	width: 930px;
+	margin: 100px auto 100px auto;
+	font-size: 15px;
+}
+article>div:first-child {
+	display: inline-block;
+	width: 595px;
+	margin: 0 25px 0 0;
+	vertical-align: top;
+}
+
+article>div:last-child {
+	display: inline-block;
+	width: 295px;
+	margin: 0 auto;
+	vertical-align: top;
+}
+
+article>div:last-child>p {
+	margin-top: 0;
+	font-weight: bold;
+	color: navy;
+}
+
+.input-fields>* {
+	margin-bottom: 1px;
+}
+
+.flex-list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.flex-list * {
+	box-sizing: border-box;
+}
+
+.flex-list li {
+	list-style: none;
+}
+
+.flex-list li:first-child {
+	width: 140px;
+	font-weight: bold;
+	color: navy;
+}
+
+.flex-list li:last-child {
+	width: calc(100% - 140px);
+}
+
+.flex-list input {
+	font-family: 'Nanum Gothic', sans-serif;
+	height: 20pt;
+	border-color: #F0F0F0;
+	border-width: 0.5px;
+}
+
+.flex-list input[type='number' i] {
+	text-align: center;
+}
+
+.flex-list .full-size {
+	width: calc(100% - 3px);
+}
+
+.flex-list .three-quarter-size {
+	width: calc(75% - 4px);
+}
+
+.flex-list .half-size {
+	width: calc(50% - 4px);
+}
+
+.flex-list .one-third-size {
+	width: calc(33.33% - 4px);
+}
+
+.flex-list .quarter-size {
+	width: calc(25% - 4px);
+}
+
+.flex-list input::file-selector-button {
+	width: 80pt;
+	height: 20pt;
+	background-color: #E9FF2D;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-color: #F0F0F0;
+	border-width: 0.5px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.flex-list input::file-selector-button:hover {
+	background-color: #ffea2d;
+}
+
+div[id$="Alert"] {
+	height: 17px;
+	padding-left: 140px;
+}
+
+article input[type="checkbox" i] {
+	width: 16pt;
+	height: 16pt;
+	margin: 0;
+	box-shadow: none;
+}
+
+.flex-list button, section input[type="submit" i] {
+	font-family: 'Nanum Gothic', sans-serif;
+	border: 0;
+	background-color: #E9FF2D;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+
+.flex-list button {
+	height: 28px;
+}
+
+section input[type="submit" i] {
+	width: 550px;
+	height: 45px
+}
+
+.flex-list button:hover, section input[type="submit" i] {
+	background-color: #ffea2d;
+}
+
+.flex-list button:active, section input[type="submit" i] {
+	background-color: #E9FF2D;
+}
+
+.flex-list select {
+	height: 28px;
+	border-color: #F0F0F0;
+	border-width: 0.5px;
+	font-family: 'Nanum Gothic', sans-serif;
+	text-align: center;
+	letter-spacing: .12em;
+}
+
+.flex-list select#sel-domain {
+	width: 89px;
+}
+
+.flex-list #sel-month {
+	width: 149px;
+}
+
+.flex-list select:hover {
+	box-shadow: 0px 0px 5px #888888;
+}
+
+.checkbox-item * {
+	vertical-align: text-top;
+}
+
+.float-right-block {
+	float: right;
+}
+
+section footer {
+	margin-top: 25px;
+}
+
+section footer * {
+	text-align: center;
+}
+
+section footer button {
+	width: calc(100% - 38px);
+	height: 50px;
+	font-size: 14px;
+	letter-spacing: 20px;
+	margin-left: 10px;
+}
+
+article dl {
+	padding: 0;
+	width: 295px;
+	height: 160px;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px #ccc;
+	border: 5px solid #fff;
+	overflow: hidden;
+}
+
+article dd {
+	position: relative;
+	top: -50px;
+	width: 200px;
+	margin: 0;
+	padding: 5px 0px 5px 30px;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+dt.hotplace img {
+	width: 285px;
+	height: 150px;
+	object-fit: cover;
+}
+
+.poster {
+	padding: 0;
+}
+
+.poster li {
+	display: inline-block;
+	vertical-align: top;
+	width: 70.6px;
+	padding: 0;
+	margin: 0;
+}
+
+.poster img {
+	width: 100%;
+}
+
+li .material-symbols-outlined {
+	position: relative;
+	top: 8px;
+	right: 34px;
+	width: 0;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+li .material-symbols-outlined:hover {
+	color: rgba(0, 0, 0, 0.75);
+	cursor: pointer;
+}

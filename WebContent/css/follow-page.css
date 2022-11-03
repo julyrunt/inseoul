@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 카테고리 버튼 스타일
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	header#article-header
+ *		nav.board-nav
+ *			ul
+ *				li
+ *					a
+ *						span
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .board-nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav li {
+	flex-basis: 50%;
+	height: 75px;
+	list-style: none;
+}
+
+#article-header .board-nav li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav a, #article-header .board-nav a:visited
+	{
+	display: block;
+	width: inherit;
+	height: inherit;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#article-header .board-nav span {
+	display: block;
+	position: relative;
+	top: calc(( 100% - 20px)/2);
+}
+
+/* ---------------------------------------------------------------------------------------------------- 
+ * 목록 스타일 시트 
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	div#follow-page
+ *		ul.follows
+ *			li.follow
+ *				a
+ *					img
+ *					div.follow-contents
+ *						span.follow-nick
+ *						span.follow-date
+ *						span.follow-introduction
+ *						span.follow-info
+ * ----------------------------------------------------------------------------------------------------
+ *					span.follow-add
+ *						span.material-symbols-outlined
+ *						span.symbol-label
+  * ----------------------------------------------------------------------------------------------------
+ *					span.follow-remove
+ *						span.material-symbols-outlined
+ *						span.symbol-label
+ * ---------------------------------------------------------------------------------------------------- */
+#follow-page .follows {
+	padding: 0;
+	min-height: 92px;
+}
+
+#follow-page .follow {
+	display: flex;
+	width: 100%;
+	list-style: none;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#follow-page .follow:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#follow-page .follow>img {
+	width: 72px;
+	height: 72px;
+	border-radius: 100%;
+}
+
+#follow-page .follow-contents {
+	width: calc(100% - 177px);
+	margin: 0 0 0 5px;
+}
+
+#follow-page .follow-contents a, .follow-contents a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#follow-page .follow-nick {
+	font-weight: bold;
+}
+
+#follow-page .follow-date, #follow-page .follow-info {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+#follow-page .follow-introduction {
+	margin: 10px 0 10px 0;
+}
+
+#follow-page .follow-add, #follow-page .follow-remove {
+	float: right;
+	width: 100px;
+	height: 38px;
+	margin-top: 15px;
+	padding: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#follow-page .follow-add {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+#follow-page .follow-remove:hover {
+	color: red;
+	background-color: rgba(255, 0, 0, 0.1);
+	cursor: pointer;
+}
+
+#follow-page .follow-add .material-symbols-outlined,
+#follow-page .follow-remove .material-symbols-outlined {
+	border-radius: 5px;
+}
+
+#follow-page .follow-add .symbol-label,
+#follow-page .follow-remove .symbol-label {
+	display: inline-block;
+	position: relative;
+	top: -7px;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 카테고리 버튼 스타일
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	header#article-header
+ *		nav.board-nav
+ *			ul
+ *				li
+ *					a
+ *						span
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .board-nav li:first-child {
+	border-bottom: 3px solid #71B7E5;
+	font-weight: bold;
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 
+ * ---------------------------------------------------------------------------------------------------- */
+article form select, 
+article form input[type="number"] {
+	width: calc((100% - 9px) / 3);
+	height: 32px;
+	text-align: center;
+}
+
+article form option {
+	text-align: center;
+}
+
+article form .input-preview {
+	width: 122px;
+	height: 122px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 100%;
+	margin-top: 10px;
+	background-size: cover;
+}

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/*타이틀*/
+.top-title {
+	width: 100%;
+	height: 200px;
+	z-index: 997;
+}
+
+.top-title img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	object-position: center middle;
+	filter: brightness(90%);
+}
+
+.titleBox {
+	position: relative;
+	top: -140px;
+	left: 50%;
+	box-sizing: border-box;
+	width: 600px;
+	height: 80px;
+	margin: 0 50px 0 -300px;
+	padding: 25px;
+	z-index: 998;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 15px;
+}
+section {
+	width: 900px;
+	height: calc(100vh - 624px);
+	margin: 100px auto;
+	text-align: center;
+}
+.flex-list {
+	display: flex;
+	width: 560px;
+	margin: 0 0 15px 170px;
+	padding: 0;
+	border-radius: 25px;
+	background-color: #033DBB;
+}
+
+.flex-list * {
+	box-sizing: border-box;
+}
+
+.flex-list>li {
+	list-style: none;
+	padding: 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+	color: white;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.flex-list>li:first-letter {
+	color: #E9FF2D;
+}
+
+.flex-list input {
+	font-family: 'Nanum Gothic', sans-serif;
+	height: 20pt;
+	border-color: #F0F0F0;
+	border-width: 0.5px;
+	color: navy;
+	font-weight: bold;
+}
+
+.flex-list input[type="text" i], .flex-list input[type="password" i] {
+	width: 400px;
+	height: 40px;
+	margin: 10px 0 10px 0;
+	font-size: 16px;
+}
+
+section button, section input[type="submit" i], section input[type="button"
+	i] {
+	width: 180px;
+	height: 40px;
+	font-family: 'Nanum Gothic', sans-serif;
+	border: 0;
+	background-color: #E9FF2D;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+	font-weight: bold;
+}
+
+section button:hover, section input[type="submit" i]:hover, section input[type="button"
+	i]:hover {
+	background-color: #ffea2d;
+}
+
+section button:active, section input[type="submit" i]:active, section input[type="button"
+	i]:active {
+	background-color: #E9FF2D;
+}

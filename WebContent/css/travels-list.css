@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 프로필 네비게이션
+ * ---------------------------------------------------------------------------------------------------- */
+#section-nav li:first-child {
+	font-weight: bold;
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 카테고리 버튼 스타일
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	header#article-header
+ *		nav.board-nav
+ *			ul
+ *				li
+ *					a
+ *						span
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .board-nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav li {
+	flex-basis: calc(100%/ 5);
+	height: 75px;
+	list-style: none;
+}
+
+#article-header .board-nav li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#article-header .board-nav li:nth-child(3) {
+	border-bottom: 3px solid #71B7E5;
+	font-weight: bold;
+}
+
+#article-header .board-nav a, #article-header .board-nav a:visited
+	{
+	display: block;
+	width: inherit;
+	height: inherit;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#article-header .board-nav span {
+	display: block;
+	position: relative;
+	top: calc(( 100% - 20px)/2);
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 게시판 카테고리 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	nav#category-nav
+ *		ul
+ *			li
+ *				a
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .category-nav ul {
+	padding: 0;
+	margin-left: 5px;
+}
+
+#article-header .category-nav li {
+	display: inline-block;
+}
+
+#article-header .category-nav li:before {
+	content: " | ";
+}
+
+#article-header .category-nav li:first-child:before {
+	content: none;
+}
+
+#article-header .category-nav a, .category-nav a:visited {
+	color: black;
+	text-decoration: none;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 게시판 검색창 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	#article-header
+ *		.search-box
+ *			form
+ *				input[type="radio"] * 3
+  *				input[type="text"]#keywords
+ *				span#submit
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .search-box {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#article-header .search-box #keywords {
+	width: calc(100% - 210px);
+	height: 30px;
+	margin-left: 10px;
+}
+
+#article-header .search-box .material-symbols-outlined {
+	position: relative;
+	top: 8px;
+	right: 34px;
+	width: 0;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+#article-header .search-box #submit {
+	cursor: pointer;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 글쓰기 버튼 영역
+ * ---------------------------------------------------------------------------------------------------- */
+article footer {
+	text-align: right;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 
+ * ----------------------------------------------------------------------------------------------------
+ *	ul#travels-list
+ *		li.tavels
+ *			a
+ *				dl
+ *					dt
+ *						div.location-name
+ *						div.travels-title
+ *					dd
+ *				div.count
+ *					div.group-01
+ *						img*3
+ *					div.group-02
+ *						span.trip-id
+ *						span.trip-data
+ * ---------------------------------------------------------------------------------------------------- */
+#travels-list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 5px;
+	grid-auto-rows: minmax(auto, 180px);
+	min-height: 735px;
+	padding: 0;
+	margin: 10px 0;
+	box-sizing: border-box;
+}
+
+#travels-list .tavels {
+	position: relative;
+	list-style: none;
+	height: 180px;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#travels-list .tavels dl {
+	position: relative;
+	top: 0;
+	overflow: hidden;
+	padding: 20px;
+	margin: 0;
+	min-height: 124px;
+}
+
+#travels-list .tavels dl dt {
+	font-size: 16px;
+	color: #333333;
+	font-weight: 700;
+	display: flex;
+}
+
+#travels-list .tavels dl dt div.location-name, #travels-list .tavels dl dt div.travels-title
+	{
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#travels-list .tavels dl dt div.location-name {
+	max-width: 25%;
+}
+
+#travels-list .tavels dl dd {
+	font-size: 16px;
+	color: #555;
+	font-weight: 300;
+	line-height: 25px;
+	margin: 0;
+	margin-top: 10px;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	word-wrap: break-word;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	margin-top: 10px;
+}
+
+#travels-list .tavels .count {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 40px;
+	padding: 8px 20px;
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 20px;
+}
+
+#travels-list .tavels .count .group-01 {
+	float: left;
+	color: white;
+}
+
+#travels-list .tavels .count .group-01 img {
+	position: relative;
+	top: 4px;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+}
+
+#travels-list .tavels .count .group-02 {
+	float: right;
+	margin-top: -2px;
+}
+
+#travels-list .tavels .count .group-02 span {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.5;
+}
+
+#travels-list .tavels .count .group-02 span.trip-id {
+	font-size: 16px;
+	color: #555;
+	font-weight: 700;
+}
+
+#travels-list .tavels .count .group-02 span.trip-data {
+	padding-left: 10px;
+	margin-left: 8px;
+	font-size: 14px;
+	color: #888;
+	font-weight: 300;
+}
+
+#travels-list .tavels .count .group-02 span.trip-data:before {
+	content: '';
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	background-color: #ddd;
+	position: absolute;
+	top: 6px;
+	left: 0;
+	z-index: 10;
+}

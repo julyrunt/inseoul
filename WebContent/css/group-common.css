@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 프로필 네비게이션
+ * ---------------------------------------------------------------------------------------------------- */
+#section-nav li:nth-child(3) {
+	font-weight: bold;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 그룹 목록 스타일 시트
+ * ----------------------------------------------------------------------------------------------------  
+ * 	ul#group-page
+ *		li.group
+ *			div.title
+ *				span.material-symbols-outlined
+ *				span
+ *			div3.photo
+ *				img
+ *				span
+ *			div.info
+ *				span.label
+ *				span
+ * ----------------------------------------------------------------------------------------------------
+ *					a
+ *					font
+ * ----------------------------------------------------------------------------------------------------
+ *			div.buttons
+ *				input.togroup[type="button"]
+ * ---------------------------------------------------------------------------------------------------- */
+#group-page {
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 794px;
+	margin: 25px 0;
+	padding: 0;
+	margin: 25px 0;
+}
+
+#group-page .group {
+	flex-basis: calc(25% - 6px);
+	height: 391px;
+	margin: 3px;
+	padding: 10px;
+	list-style: none;
+	background-color: white;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	list-style: none;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+#group-page .group:hover {
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+#group-page .group a, #group-page .group a:visited {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#group-page .group .title, #group-page .group .info {
+	display: flex;
+}
+
+#group-page .group .title span {
+	padding: 2px;
+	font-weight: bold;
+}
+
+#group-page .group .title span:last-child {
+	display: block;
+	max-width: 171px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+
+#group-page .group .photo {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: gray;
+}
+
+#group-page .group .photo img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+}
+
+#group-page .group .info {
+	margin: 3px 0;
+}
+
+#group-page .group .info span:last-child {
+	padding: 2px 8px;
+	font-size: 14px;
+}
+
+#group-page .group .info .label {
+	padding: 4px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	font-size: 12px;
+}
+
+#group-page .group .info .label.royalblue {
+	background-color: royalblue;
+}
+
+#group-page .group .info .label.darkred {
+	background-color: darkred;
+}
+
+#group-page .group .info .name {
+	display: block;
+	max-width: 157px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+
+#group-page .group .buttons {
+	display: flex;
+	width: 100%;
+	height: 32px;
+	margin-top: 3px;
+}
+
+#group-page .group .buttons .manage {
+	flex-basis: calc(50% - 1px);
+	margin-right: 1px;
+}

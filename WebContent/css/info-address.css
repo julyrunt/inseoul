@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 카테고리 버튼 스타일
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	header#article-header
+ *		nav.board-nav
+ *			ul
+ *				li
+ *					a
+ *						span
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .board-nav li:nth-child(2) {
+	border-bottom: 3px solid #71B7E5;
+	font-weight: bold;
+}
+
+article form select {
+	width: 100%;
+	height: 32px;
+	text-align: center;
+}
+
+article form option {
+	text-align: center;
+}
+
+article form #addressInput {
+	width: calc(100% - 100px);
+}
+article form #get-postcode {
+	width: 95px;
+	height: 32px;
+	text-align: center;
+}

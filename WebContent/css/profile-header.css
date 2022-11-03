@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/* ----------------------------------------------------------------------------------------------------
+ * 프로필 페이지 헤더 스타일 시트
+ * ---------------------------------------------------------------------------------------------------- 
+ *	header#main-header
+ * ----------------------------------------------------------------------------------------------------
+ *	div.profile-background 
+ *		div.profile-header
+ *			div.photo
+ *				div
+ *				div
+ *					span.follow-add
+  *					span.follow-remove
+ *					span.timeline
+ *						span.material-symbols-outlined
+ *						span.symbol-label
+ *			div.info
+ *				ul
+ *					li
+ *						span
+ *							b
+ *					li.introduction
+ *						span
+ *						span.#introduction-edit.material-symbols-outlined
+ *					li
+ *						span.material-symbols-outlined
+ *						span
+ *					li
+ *						ul.follow
+ *							li * 2
+ *					li
+ *						ul.badge
+ *							li * .+
+ *			div.profile-header-manage
+ *				span#background-image-change.material-symbols-outlined
+ * ---------------------------------------------------------------------------------------------------- */
+#main-header {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#main-header .profile-background {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+#main-header .profile-header {
+	display: flex;
+	width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+	width: 1200px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#main-header .profile-header a, #main-header .profile-header a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+#main-header .photo {
+	flex-basis: 200px;
+	height: inherit;
+}
+
+#main-header .photo div:first-child {
+	position: relative;
+	top: 10%;
+	left: 20%;
+	width: 60%;
+	height: 60%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	border-radius: 100%;
+}
+
+#main-header .photo div:last-child {
+	position: relative;
+	top: 10%;
+	left: 20%;
+	width: 60%;
+	height: 38px;
+}
+
+#main-header .timeline, #main-header .follow-add, #main-header .follow-remove
+	{
+	display: block;
+	width: 122px;
+	height: inherit;
+	margin-top: 5px;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid white;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#main-header .follow-add {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#main-header .follow-remove {
+	color: white;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+#main-header .follow-remove:hover {
+	color: red;
+	background-color: rgba(255, 0, 0, 0.3);
+}
+
+#main-header .timeline:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#main-header .follow-add .material-symbols-outlined, #main-header .follow-remove .material-symbols-outlined
+	{
+	border-radius: 5px;
+}
+
+#main-header .timeline .symbol-label, #main-header .follow-add .symbol-label,
+	#main-header .follow-remove .symbol-label {
+	display: inline-block;
+	position: relative;
+	top: -7px;
+}
+
+#main-header .info {
+	flex-basis: 800px;
+	height: inherit;
+}
+
+#main-header .info>ul {
+	position: relative;
+	top: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+#main-header .info>ul>li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+#main-header .info .follow, #main-header .info .badge {
+	padding: 0;
+}
+
+#main-header .introduction {;
+	
+}
+
+#main-header .introduction span:empty:before {;
+	color: rgba(255, 255, 255, 0.5);
+	content: "자기소개를 입력해주세요.";
+}
+
+#main-header .introduction input {
+	width: 90%;
+}
+
+#main-header .info .material-symbols-outlined {
+	position: relative;
+	top: 4px;
+}
+
+#main-header .introduction #introduction-submit {
+	cursor: pointer;	
+}
+
+#main-header .introduction #introduction-edit {
+	opacity: 0;
+	cursor: pointer;
+}
+
+#main-header .introduction:hover #introduction-edit {
+	opacity: 255;
+}
+
+#main-header .follow li, #main-header .badge li {
+	display: inline-block;
+}
+
+#main-header .follow li:first-child {
+	margin-right: 25px;
+}
+
+#main-header .profile-header-manage {
+	flex-basis: 200px;
+	height: inherit;
+	text-align: right;
+}
+
+#main-header .profile-header-manage #background-image-change {
+	padding: 10px;
+	margin: 10px 10px 0 0;
+	border-radius: 25px;
+	box-sizing: border-box;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	cursor: pointer;
+}
+
+#main-header:hover .profile-header-manage #background-image-change {
+	opacity: 100%;
+}

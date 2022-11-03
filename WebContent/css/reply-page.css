@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 댓글 목록 스타일 시트 
+ * ---------------------------------------------------------------------------------------------------- 
+ * 	div#reply-page
+ *		ul.replies
+ *			li.reply
+ *				a
+ *					img
+ *				div.reply-contents
+ *					span.reply-writer-nick
+ *						a
+ *					span.reply-write-date
+ * ----------------------------------------------------------------------------------------------------
+ *					span.reply-manage
+ *						span.reply-modify
+ *							span.material-symbols-outlined
+ *						span.reply-delete
+ *							span.material-symbols-outlined
+ *					div.reply-text
+ * ----------------------------------------------------------------------------------------------------
+ *					div.reply-modify-form
+ *						textarea 			
+ *						input[type='button' i].reply-modify-submit
+ * ---------------------------------------------------------------------------------------------------- */
+#reply-page .replies {
+	padding: 0;
+}
+
+#reply-page .reply {
+	display: flex;
+	width: 100%;
+	list-style: none;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#reply-page .reply img {
+	width: 72px;
+	height: 72px;
+	border-radius: 100%;
+}
+
+#reply-page .reply-contents {
+	width: calc(100% - 77px);
+	margin: 0 0 0 5px;
+}
+
+#reply-page .reply-contents a, .reply-contents a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#reply-page .reply-writer-nick {
+	font-weight: bold;
+}
+
+#reply-page .reply-write-date {
+	margin-left: 10px;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+#reply-page .reply-manage {
+	float: right;
+	font-size: 12px;
+	opacity: 0;
+}
+
+#reply-page .reply:hover .reply-manage {
+	opacity: 100%;
+}
+
+#reply-page .reply-manage .material-symbols-outlined {
+	border-radius: 5px;
+}
+
+#reply-page .reply-manage .material-symbols-outlined:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+#reply-page .reply-modify-submit {
+	width: 72px;
+	height: 72px;
+	margin: 13px 0;
+}
+
+#reply-page .reply-contents .reply-text {
+	padding: 5px;
+	margin-top: 5px;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+#reply-page .reply-modify-form {
+	display: flex;
+	width: 100%;
+	list-style: none;
+}
+
+#reply-page .reply-modify-form textarea {
+	border: none;
+	resize: none;
+	width: calc(100% - 84px);
+	height: 72px;
+	margin: 13px 5px 13px 5px;
+}
+
+/* ---------------------------------------------------------------------------------------------------- 
+ * 댓글 페이징 버튼
+ * ---------------------------------------------------------------------------------------------------- 
+ *	#reply-page 
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#reply-page .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#reply-page .paging-buttons button {
+	min-width: 32px;
+}

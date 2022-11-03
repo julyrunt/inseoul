@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* ----------------------------------------------------------------------------------------------------
+ * 게시판 카테고리 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	nav#category-nav
+ *		ul
+ *			li
+ *				a
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .category-nav ul {
+	padding: 0;
+	margin-left: 5px;
+}
+
+#article-header .category-nav li {
+	display: inline-block;
+}
+
+#article-header .category-nav li:before {
+	content: " | ";
+}
+
+#article-header .category-nav li:first-child:before {
+	content: none;
+}
+#article-header .category-nav a, .category-nav a:visited {
+	color: black;
+	text-decoration: none;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 게시판 검색창 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	#article-header
+ *		.search-box
+ *			form
+ *				input[type="radio"] * 3
+  *				input[type="text"]#keywords
+ *				span#submit
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header .search-box {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#article-header .search-box #keywords {
+	width: calc(100% - 210px);
+	height: 30px;
+	margin-left: 10px;
+}
+
+#article-header .search-box .material-symbols-outlined {
+	position: relative;
+	top: 8px;
+	right: 34px;
+	width: 0;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+#article-header .search-box #submit {
+	cursor: pointer;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}
+/* ----------------------------------------------------------------------------------------------------
+ * 글쓰기 버튼 영역
+ * ---------------------------------------------------------------------------------------------------- */
+article footer {
+	text-align: right;
+}
