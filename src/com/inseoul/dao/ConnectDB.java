@@ -2,6 +2,8 @@ package com.inseoul.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
+
+import com.inseoul.vo.AlbumBean;
 import com.inseoul.vo.BucketBean;
 import com.inseoul.vo.FestivalPosterBean;
 import com.inseoul.vo.LocationBean;
@@ -515,5 +517,92 @@ public class ConnectDB {
       close();
     }
     return result;
+  }
+  
+  /* ----------------------------------------------------------------------------------------------------
+   * 인덱스 베스트5 출력
+   * ---------------------------------------------------------------------------------------------------- */
+  public ArrayList<LocationBean> getBest5() {
+	  	ArrayList<LocationBean> list = new ArrayList<LocationBean>();
+	    try {
+	      open();
+	      String command = "select " + 
+	          "    l.lid," +
+	          "    l.name," +
+	          "    l.img," +
+	          "    l.info," +
+	          "    (" +
+	          "        (select count(*) from `albums` a where a.lid = l.lid) + " + 
+	          "        (select count(*) from `album-recommend` ar left join `albums` a on a.aid = ar.aid where a.lid = l.lid) + " + 
+	          "        (select count(*) from `buckets` b where b.lid = l.lid) + " + 
+	          "        (select count(*) from `bucket-recommend` br left join `buckets` b on b.bid = br.bid where b.lid = l.lid) + " + 
+	          "        (select count(*) from `travels` t where t.lid = l.lid) + " + 
+	          "        (select count(*) from `travels-recommend` tr left join `travels` t on t.tid = tr.tid where t.lid = l.lid) + " + 
+	          "        (select count(*) from `routemaps` r where " + 
+	          "            (r.day1_0 = l.lid) or  (r.day1_1 = l.lid) or  (r.day1_2 = l.lid) or  (r.day1_3 = l.lid) or " + 
+	          "            (r.day2_0 = l.lid) or  (r.day2_1 = l.lid) or  (r.day2_2 = l.lid) or  (r.day2_3 = l.lid) or " + 
+	          "            (r.day3_0 = l.lid) or  (r.day3_1 = l.lid) or  (r.day3_2 = l.lid) or  (r.day3_3 = l.lid) or " + 
+	          "            (r.day4_0 = l.lid) or  (r.day4_1 = l.lid) or  (r.day4_2 = l.lid) or  (r.day4_3 = l.lid) or " + 
+	          "            (r.day5_0 = l.lid) or  (r.day5_1 = l.lid) or  (r.day5_2 = l.lid) or  (r.day5_3 = l.lid) or " + 
+	          "            (r.day6_0 = l.lid) or  (r.day6_1 = l.lid) or  (r.day6_2 = l.lid) or  (r.day6_3 = l.lid) or " + 
+	          "            (r.day7_0 = l.lid) or  (r.day7_1 = l.lid) or  (r.day7_2 = l.lid) or  (r.day7_3 = l.lid)" + 
+	          "        ) + " + 
+	          "        (select count(*) from `routemap-recommend` rr left join `routemaps` r on rr.mid = r.mid where " + 
+	          "            (r.day1_0 = l.lid) or  (r.day1_1 = l.lid) or  (r.day1_2 = l.lid) or  (r.day1_3 = l.lid) or " + 
+	          "            (r.day2_0 = l.lid) or  (r.day2_1 = l.lid) or  (r.day2_2 = l.lid) or  (r.day2_3 = l.lid) or " + 
+	          "            (r.day3_0 = l.lid) or  (r.day3_1 = l.lid) or  (r.day3_2 = l.lid) or  (r.day3_3 = l.lid) or " + 
+	          "            (r.day4_0 = l.lid) or  (r.day4_1 = l.lid) or  (r.day4_2 = l.lid) or  (r.day4_3 = l.lid) or " + 
+	          "            (r.day5_0 = l.lid) or  (r.day5_1 = l.lid) or  (r.day5_2 = l.lid) or  (r.day5_3 = l.lid) or " + 
+	          "            (r.day6_0 = l.lid) or  (r.day6_1 = l.lid) or  (r.day6_2 = l.lid) or  (r.day6_3 = l.lid) or " + 
+	          "            (r.day7_0 = l.lid) or  (r.day7_1 = l.lid) or  (r.day7_2 = l.lid) or  (r.day7_3 = l.lid)" + 
+	          "        )" +
+	          "    ) as hotscore " + 
+	          "from `locations` l " + 
+	          "order by hotscore desc " +
+	          "limit 5;";
+	      ResultSet rs = stmt.executeQuery(command);
+	      while (rs.next()) {
+	    	LocationBean location = new LocationBean();
+	        location.setLid(rs.getInt("lid"));
+	        location.setName(rs.getString("name"));
+	        location.setImg(rs.getString("img"));
+	        location.setInfo(rs.getString("info"));
+	        location.setHotscore(rs.getInt("hotscore"));
+	        list.add(location);
+	        
+	      }
+	    } catch (Exception e) {
+	      System.out.println(e);
+	    } finally {
+	      close();
+	    }
+	    return list;
+  }
+  
+  /* ----------------------------------------------------------------------------------------------------
+   * 인덱스 베스트5 출력
+   * ---------------------------------------------------------------------------------------------------- */
+  public ArrayList<AlbumBean> getImgs() {
+	  ArrayList<AlbumBean> imgs = new ArrayList<>();
+	  try {
+	      open();
+	      String command = "SELECT img01, aid, uid FROM albums order by aid desc limit 21";
+	      ResultSet rs = stmt.executeQuery(command);
+	      while (rs.next()) {
+	    	AlbumBean album = new AlbumBean();
+	    	album.setImg01(rs.getString("img01"));
+	    	album.setUid(rs.getInt("uid"));
+	    	album.setAid(rs.getInt("aid"));
+	        imgs.add(album);
+	        
+	      }
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			close();
+		}
+	
+	  
+	  return imgs;
   }
 }

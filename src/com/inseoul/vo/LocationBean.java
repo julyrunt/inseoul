@@ -1,7 +1,7 @@
 package com.inseoul.vo;
 
 public class LocationBean {
-  private int lid;
+  private int lid, hotscore;
   private String name, img, tel, site, addr, usetime, holiday, info, useinfo, longitude , latitude ;
   public int getLid() {
     return lid;
@@ -75,6 +75,12 @@ public class LocationBean {
   public void setLatitude(String latitude) {
     this.latitude = latitude;
   }
+public int getHotscore() {
+	return hotscore;
+}
+public void setHotscore(int hotscore) {
+	this.hotscore = hotscore;
+}
   
   
 }
