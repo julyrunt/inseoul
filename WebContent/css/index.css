@@ -233,6 +233,8 @@ section {
 
 .imgbox img {
 	transition: all 0.2s linear;
+	width: 350px;
+	height: 200px;
 }
 
 .smallbox:hover img:not (.icon-more img ) {
@@ -364,6 +366,8 @@ section {
 
 .big-imgbox img {
 	transition: all 0.2s linear;
+	width: 350px;
+	height: 550px;
 }
 
 .bigbox-ex:hover img {

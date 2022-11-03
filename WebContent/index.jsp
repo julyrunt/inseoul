@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.inseoul.vo.LocationBean" %>
+<jsp:useBean id="conn" class="com.inseoul.dao.ConnectDB" />
+<c:set var="best" value="${conn.getBest5()}" />
+<c:set var="imgs" value="${conn.getImgs()}" />
 <html>
 <head>
 	<meta charset="utf-8">
@@ -30,15 +35,14 @@
 		<h1>서울 여행의 모든 것!</h1>
 		<p>관람, 축제, 숙박 예약 등 모든 여정을 IN서울과 함께하세요.</p>
 		<div class="searchBox">
-			<input type="text" name="txt_search" placeholder=" 여행지,박물관,축제 검색">
+			<input type="text" name="txt_search" placeholder=" 여행지,축제 검색">
 			<span class="material-symbols-outlined">
 				search
 			</span>
-			<p>추천 : ....</p>
-			<button>지도에서 검색</button>
+			<button>검색</button>
 		</div>
 	</div>
-	<div class="slider"> 
+	<div class="slider">
 		<div>
 			<img src="images/Banner02.png" />
 		</div>
@@ -64,8 +68,8 @@
 					</div>
 					<div class="responsive">
 						<div class="slick-slide-spanbox"><a href=""><div><img src="images/plan.png"></div><br><span>추천여행 코스</span></a></div>
-						<div><a href=""><img src="images/pland.png"><br>동균유저님의 여행계획</a></div>
-						<div><a href=""><img src="images/plang.png"><br>건준유저님의 여행계획</a></div>
+						<div><a href=""><img src="images/pland.png"><br>동균유저님의 여행계획</span></a></div>
+						<div><a href=""><img src="images/plang.png"><br>건준유저님의 여행계획</span></a></div>
 						<div><a href=""><img src="images/planh.png"><br>현준유저님의 여행계획</a></div>	
 						<div><a href=""><img src="images/blossom3.png"><br>벛꽃축제</a></div>
 						<div><a href=""><img src="images/festival1.jpg"><br>서울청소년 연극 축제</a></div>
@@ -82,18 +86,18 @@
 				<img src="images/logo-info.png" width="150" height="50">
 				<h2>서울을 여행하는 당신에게 필요한 각종 정보들</h2>
 				<div class="midulesection-contents">
-					<a href="" target="_self">
+					<a href="travels/locationIndex.tv" target="_self">
 						<div class="smallbox">
 							<div class="info-imgbox">
-								<img src="images/info-museum.png" />
+								<img src="images/info-sights.png" />
 								<div class="icon-more">
 									<img src="images/icon-museum.svg" alt="">
 								</div>
 							</div>
-							<p class="info-imgbox-desc">박물관 정보</p>
+							<p class="info-imgbox-desc">관광지 정보</p>
 						</div>
 					</a>
-					<a href="" target="_self">
+					<a href="festival/festivalList.val" target="_self">
 						<div class="smallbox">
 							<div class="info-imgbox">
 								<img src="images/info-festival.png" />
@@ -104,7 +108,7 @@
 							<p class="info-imgbox-desc">축제 정보</p>
 						</div>
 					</a>
-					<a href="lodgment" target="_self">
+					<a href="lodgment/lodgment.lm" target="_self">
 						<div class="smallbox">
 							<div class="info-imgbox">
 								<img src="images/info-hotel.png" />
@@ -125,22 +129,22 @@
 						<a href="" target="_self">
 							<div class="bigbox-ex">
 								<div class="big-imgbox">
-									<img src="images/best-01.png" />
+									<img src="images2/${best.get(0).getImg()}" />
 									<div class="more">
 										1st
 									</div>
 								</div>
 								<div class="location-name">
-									서울페스타 2022
+									${best.get(0).getName()}
 								</div>
 								<div class="location-desc">
-									흥겨운 음악, 뜨거운 열기, 사람들의 들뜬 마음이 더해 축제는 즐겁다. 그곳에는 사람들의 환희로 가득하다. 즐거움과 환희가 가득한 그곳을 우리는 2년이라는 긴 시간 동안 묻어두어야만 했다. 하지만 다시 축제를 즐길 시간이 돌아왔다.
+									${best.get(0).getInfo()}
 								</div>
 								<div class="big-imgbox-desc-ex">
 									<span class="material-symbols-outlined">
 										favorite
 									</span>
-									<p class="conter">123</p>
+									<p class="conter">${best.get(0).getHotscore()}</p>
 								</div>
 							</div>
 						</a>
@@ -149,80 +153,80 @@
 						<a href="" target="_self">
 							<div class="smallbox-ex">
 								<div class="imgbox">
-									<img src="images/best-02.png" />
+									<img src="images2/${best.get(1).getImg()}" />
 									<div class="more">
 										2nd
 									</div>
 								</div>
 								<div class="location-name">
-									용리단길
+									${best.get(1).getName()}
 								</div>
 								<div class="location-desc">
-									서울의 시간이 켜켜이 내려앉은 거리 용산에 새로운 바람이 불기 시작했다. 독특한 음식들을 맛보고 색다른 분위기를 즐기며 세련된 제품들을 판매하는 곳들이 여기저기 생겨났다. 오래된 것과 새로운 것들은 서로 사이좋게 잘 어울리며 멋진 거리, 용리단길을 탄생시켰다. 용리단길은 더 이상 수식어가 필요 없는 서울의 핫 플레이스다.
+									${best.get(1).getInfo()}
 								</div>
 								<div class="imgbox-desc-ex">
 									<span class="material-symbols-outlined">
 										favorite
 									</span>
-									<p class="conter">123</p>
+									<p class="conter">${best.get(1).getHotscore()}</p>
 								</div>
 							</div>
 						</a>
 						<a href="" target="_self">
 							<div class="smallbox-ex">
 								<div class="imgbox">
-									<img src="images/best-03.png" />
+									<img src="images2/${best.get(2).getImg()}" />
 									<div class="more">
 										3rd
 									</div>
 								</div>
 								<div class="location-name">
-									난지 캠핑장
+									${best.get(2).getName()}
 								</div>
 								<div class="location-desc">
-									진심(盡心) 은 마음을 다한다는 뜻이다. 한국 사람들은 매사에 진심이다. 무엇을 하든, 마음을 다한다. 모든 일에 진심인 한국에서 최근 캠핑이 여행의 대세로 자리 잡고 있다. 진심을 다해 즐기는 한국에서 캠핑의 매력은 무엇일까?
+									${best.get(2).getInfo()}
 								</div>
 								<div class="imgbox-desc-ex">
 									<span class="material-symbols-outlined">
 										favorite
 									</span>
-									<p class="conter">123</p>
+									<p class="conter">${best.get(2).getHotscore()}</p>
 								</div>
 							</div>
 						</a>
 						<a href="" target="_self">
 							<div class="smallbox-ex">
 								<div class="imgbox">
-									<img src="images/best-04.png" />
+									<img src="images2/${best.get(3).getImg()}" />
 									<div class="more">
 										4th
 									</div>
 								</div>
-								<div class="location-name">용산공원</div>
-								<div class="location-desc">이태원이 있는 용산에는 놀거리, 볼거리가 가득하다. 박물관, 미술관을 비롯해 미디어에 소개된 맛집, SNS 핫플 등 어느 한 곳만을 손에 꼽기 어려울 만큼 특색 있는 장소가 많다. 용산, 이태원에 갈 때면 수많은 곳 중 오늘의 베스트는 어디일까 하는 기대를 하게 된다. 그런데 최근 멋진 장소가 또 하나 생겼다고 한다.</div>
+								<div class="location-name">${best.get(3).getName()}</div>
+								<div class="location-desc">${best.get(3).getInfo()}</div>
 								<div class="imgbox-desc-ex">
 									<span class="material-symbols-outlined">
 										favorite
 									</span>
-									<p class="conter">123</p>
+									<p class="conter">${best.get(3).getHotscore()}</p>
 								</div>
 							</div>
 						</a>
 						<a href="" target="_self">
 							<div class="smallbox-ex">
 								<div class="imgbox">
-									<img src="images/best-05.png" />
+									<img src="images2/${best.get(4).getImg()}" />
 									<div class="more">
 										5th
 									</div>
 								</div>
-								<div class="location-name">홍대 야외 공연장</div>
-								<div class="location-desc">음악, 그중에서 길거리 공연을 뜻하는 ‘버스킹’은 홍대 문화의 대표적인 아이콘이라고 할 수 있다. 팬데믹과 함께 금지되었던 홍대 버스킹이 방역지침 완화와 함께 1년 4개월 만에 재개되었다. 아직은 홍대 앞 ‘걷고 싶은 거리’ 야외 공연장 4개 구역 중 2곳만 사용할 수 있지만, 이미 4월 예약이 꽉 찼을 정도로 공연을 기다려 온 열기가 뜨겁다.</div>
+								<div class="location-name">${best.get(4).getName()}</div>
+								<div class="location-desc">${best.get(4).getInfo()}</div>
 								<div class="imgbox-desc-ex">
 									<span class="material-symbols-outlined">
 										favorite
 									</span>
-									<p class="conter">123</p>
+									<p class="conter">${best.get(4).getHotscore()}</p>
 								</div>
 							</div>
 						</a>
@@ -234,69 +238,13 @@
 				<h2>함께 만들어 가는 여행의 추억들</h2>
 				<div class="midulesection-contents">
 					<div class="mainbox">
-						<a href="#">
-							<img src="images/p1.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p2.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p3.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p4.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p5.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p6.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p7.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p8.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p9.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p10.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p11.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p12.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/seoulforest.jpeg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/sakura.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/sadang.png" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/war.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/Banner02.png" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/bokgung.png" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/getImage.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p13.jpg" alt="" />
-						</a>
-						<a href="#">
-							<img src="images/p14.jpg" alt="" />
-						</a>
+					<c:forEach var="imgs" items="${imgs}" varStatus="status">
+						<c:if test="${imgs.img01 != null}">
+							<a href="gallery/view.do?pid=${imgs.uid}&category=my&aid=${imgs.aid}&page=1">
+								<img src="albumUpload/${imgs.img01}" alt="albumImg" />
+							</a>
+						</c:if>
+					</c:forEach>
 					</div>
 				</div>
 			</div>
