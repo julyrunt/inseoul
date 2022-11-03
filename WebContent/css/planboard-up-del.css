@@ -1,0 +1,71 @@
+@charset "UTF-8";
+.pb-topsection{
+	width: 899px;
+	height: 70px;
+	float: right;
+	border-bottom: 1px solid black;
+	line-height: 40px;
+}
+.pb-writebox{
+	width: 900px;
+	height: 600px;
+	margin: 0 0 10px 10px;
+	float: right;
+}
+.pd-writerbox{
+	width: 199px;
+	height: 50px;
+	float: left;
+	font-size: 35px;
+	border-left: 1px solid navy;
+}
+.pd-updel-name{
+	width: 698px;
+	height: 48px;
+	float: left;
+	border: 1px solid navy;
+}
+.pd-updel-name input[type="text" i]{
+	width: 100%;
+	height: 100%;
+	font-size: 25px;
+	font-weight: 800;
+	padding-left: 10px;
+}
+
+.pd-updel-text textarea{
+	width: 100%;
+	height: 499px;
+	font-size: 18px;
+	padding-left: 10px;
+	resize: none;
+	outline: none;
+	border-bottom: 1px solid navy;
+	white-space: pre;
+}
+
+.pd-updel-text input[type="text" i] {
+	width: 100%;
+	height: 499px;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.pd-updel-submit {
+	width: 900px;
+	height: 50px;
+}
+
+.pd-updel-submit input[type="submit" i] {
+	text-align: center;
+	float: right;
+	width: 100px;
+	height: 50px;
+}
+
+.pd-updel-submit input[type="button" i] {
+	text-align: center;
+	float: right;
+	width: 100px;
+	height: 50px;
+}

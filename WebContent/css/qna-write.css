@@ -1,0 +1,200 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.qna-write-bigbox {
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 200px;
+}
+
+.qna-write-toplist {
+	width: 1200px;
+	height: 50px;
+	border-bottom: 1px solid;
+	border-bottom-color: #000080;
+	float: left;
+	list-style: none;
+}
+
+.qna-write-toplist ul {
+	float: left;
+	list-style: none;
+	margin: 13px 0 0 10px;
+}
+
+.qna-write-toplist li {
+	float: left;
+	margin: 0 3px;
+	font-size: 18px;
+	color: #000080;
+}
+
+section {
+	width: 1200px;
+	position: relative;
+	min-height: calc(100% - 900px);
+}
+
+.qna-write-midbox {
+	width: 1200px;
+	height: 1000px;
+	clear: both;
+}
+
+.qna-write-sidebox {
+	width: 250px;
+	height: 350px;
+	background-color: navy;
+	float: left;
+	margin-top: 20px;
+	color: black;
+}
+
+.qna-write-sidebox a {
+	text-decoration: none;
+	color: white;
+}
+
+.qna-write-sidebox a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.qna-write-sidebox ul {
+	width: 250px;
+	height: 250px;
+	list-style: none;
+}
+
+.qna-write-sidebox li {
+	width: 250px;
+	height: 49px;
+	font-size: 18px;
+	color: #000080;
+	line-height: 47px;
+	border-bottom: 1px solid black;
+	color: white;
+}
+.qna-write-sidebox li:hover{
+	text-decoration: underline;
+}
+.qna-write-sidebox span {
+	padding: 20px 0 0 30px;
+}
+
+.qna-write-topsection{
+	width: 899px;
+	height: 70px;
+	float: right;
+	margin: 0 0 5px 0;
+	border-bottom: 1px solid black;
+	line-height: 40px;
+}
+.qna-write-topsection p {
+	float: left;
+	height: 30px;
+	font-size: 23px;
+	margin: 15px 0 0 400px;
+}
+
+.qna-write-writebox{
+	width: 900px;
+	margin: 0 0 10px 10px;
+	float: right;
+	border: none;
+}
+
+.qna-write-topic-select{
+	width: 200px;
+	height: 40px;
+	float: left;
+	border: none;
+	
+}
+.qna-write-topic-select select{
+	width: 100%;
+	height: 100%;
+	display: block;
+    line-height: 34px;
+    font-size: 15px;
+    color: #ff8000;
+    padding: 0 18px 0 0;
+    text-decoration: none;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid navy;
+    outline: none;
+}
+
+.qna-write-name{
+	width: 700px;
+	height: 40px;
+	float: left;
+	border: none;
+}
+.qna-write-name input[type="text" i]{
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
+	font-weight: 800;
+	padding-left: 10px;
+	border: none;
+	border-bottom: 1px solid navy;
+	outline: none;
+}
+.qna-write-text{
+	width: 900px;
+	clear: both;
+}
+
+.qna-write-submit{
+	width: 900px;
+	height: 50px;
+}
+.qna-write-submit input[type="submit" i],[type="button" i]{
+	text-align: center;
+	float: right;
+	width: 60px;
+	height: 25px;
+	margin: 5px 0 0 3px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+.qna-write-submit input[type="submit" i]:hover,[type="button" i]:hover{
+	background-color: #ffea2d;
+}
+.qna-write-text textarea{
+	width: 100%;
+	height: 499px;
+	font-size: 15px;
+	border: 1px solid navy;
+	padding-left: 10px;
+	resize: none;
+	outline: none;
+	white-space: pre;
+	padding: 10px;
+}
+
+#photozone{
+	width: 900px;
+	height: 300px;
+}
+.photozone-list{
+	width: 300px;
+	height: 300px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: inline;
+}
+.photozone-one{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	background-size: contain;
+	background-repeat: no-repeat;
+}

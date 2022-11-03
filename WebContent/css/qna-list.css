@@ -1,0 +1,159 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+a { text-decoration: none; }
+.qna-list-bigbox {
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 200px;
+}
+
+.qna-list-toplist {
+	width: 1200px;
+	height: 50px;
+	border-bottom: 1px solid;
+	border-bottom-color: #000080;
+	float: left;
+	list-style: none;
+}
+
+.qna-list-toplist ul {
+	float: left;
+	list-style: none;
+	margin: 13px 0 0 10px;
+}
+
+.qna-list-toplist li {
+	float: left;
+	margin: 0 3px;
+	font-size: 18px;
+	color: #000080;
+}
+
+section {
+	width: 1200px;
+	position: relative;
+	min-height: calc(100% - 900px);
+}
+
+.qna-list-midbox {
+	width: 1200px;
+	height: 1000px;
+	clear: both;
+}
+
+.qna-list-sidebox {
+	width: 250px;
+	height: 350px;
+	background-color: navy;
+	float: left;
+	margin-top: 20px;
+	color: black;
+}
+
+.qna-list-sidebox a {
+	text-decoration: none;
+	color: white;
+}
+
+.qna-list-sidebox a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.qna-list-sidebox ul {
+	width: 250px;
+	height: 250px;
+	list-style: none;
+}
+
+.qna-list-sidebox li {
+	width: 250px;
+	height: 49px;
+	font-size: 18px;
+	color: #000080;
+	line-height: 47px;
+	border-bottom: 1px solid black;
+	color: white;
+}
+.qna-list-sidebox li:hover{
+	text-decoration: underline;
+}
+.qna-list-sidebox span {
+	padding: 20px 0 0 30px;
+}
+
+.qna-list-topsection{
+	width: 899px;
+	height: 70px;
+	float: right;
+	margin: 0 0 5px 0;
+	border-bottom: 1px solid black;
+	line-height: 40px;
+}
+.qna-list-topsection p {
+	float: left;
+	height: 30px;
+	font-size: 23px;
+	margin: 15px 0 0 30px;
+	font-weight: bold;
+}
+
+.qna-list-topsection input[type="button"]{
+	text-align: center;
+	float: right;
+	width: 120px;
+	height: 30px;
+	margin-top: 20px;
+	margin-right: 25px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+
+table {
+    margin-left: 330px;
+	width: 850px;
+}
+
+#tr_top {
+	background: navy;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#pageList {
+	margin-left: 500px;
+	width: 500px;
+	text-align: center;
+	position: relative;
+}
+
+thead{
+	text-align: center;
+}
+.qna-index-List{
+	font-size: 17px;
+	font-weight: bold;
+	height: 30px;
+	overflow: hidden;
+}
+td{
+	text-align: center;
+}
+td{
+	border: 1px solid white;
+}
+
+.td1{
+	width: 100px;
+}
+.tdtitle{
+	text-align: left;
+	padding-left: 5px;
+}

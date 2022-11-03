@@ -1,0 +1,311 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+.qna-update-bigbox {
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 200px;
+}
+
+.qna-update-toplist {
+	width: 1200px;
+	height: 50px;
+	border-bottom: 1px solid;
+	border-bottom-color: #000080;
+	float: left;
+	list-style: none;
+}
+
+.qna-update-toplist ul {
+	float: left;
+	list-style: none;
+	margin: 13px 0 0 10px;
+}
+
+.qna-update-toplist li {
+	float: left;
+	margin: 0 3px;
+	font-size: 18px;
+	color: #000080;
+}
+.qna-update-sidebox li:hover{
+	text-decoration: underline;
+}
+.qna-update-sidebox span {
+	padding: 20px 0 0 30px;
+}
+
+
+section {
+	width: 1200px;
+	position: relative;
+	min-height: calc(100% - 900px);
+}
+
+.qna-update-midbox {
+	width: 1200px;
+	height: 1000px;
+	clear: both;
+}
+
+.qna-update-sidebox {
+	width: 250px;
+	height: 350px;
+	background-color: navy;
+	float: left;
+	margin-top: 20px;
+	color: black;
+}
+
+.qna-update-sidebox a {
+	text-decoration: none;
+	color: white;
+}
+
+.qna-update-sidebox a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.qna-update-sidebox ul {
+	width: 250px;
+	height: 250px;
+	list-style: none;
+}
+
+.qna-update-sidebox li {
+	width: 250px;
+	height: 49px;
+	font-size: 18px;
+	color: #000080;
+	line-height: 47px;
+	border-bottom: 1px solid black;
+	color: white;
+}
+.qna-update-sidebox li:hover{
+	text-decoration: underline;
+}
+.qna-update-sidebox span {
+	padding: 20px 0 0 30px;
+}
+
+.qna-update-topbox{
+	width: 900px;
+	height: 50px;
+	float: right;
+	margin-top: 20px;
+	border-bottom: 1px solid navy;
+}
+.qna-update-top-imgbox{
+	width: 40px;
+	height: 40px;
+	margin-top: 5px;
+	margin-right: 10px;
+	float: left;
+}
+.qna-update-top-imgbox img{
+	width: 40px;
+	height: 40px;
+}
+.qna-update-top-writerbox{
+	width: 100px;
+	height: 50px;
+	float: left;
+	line-height: 1.5;
+}
+.qna-update-top-writerbox span:first-child{
+	font-weight: bold;
+	font-size: 15px;
+}
+.qna-update-top-writerbox span:last-child{
+	font-size: 12px;
+}
+.qna-update-info{
+	width: 100%;
+	height: 65px;
+	padding-left: 10px;
+	margin: 5px 0 5px 0;
+}
+.qna-update-info-top{
+	width: 50%;
+	height: 30px;
+	float: left;
+	margin-bottom: 3px;
+}
+.qna-update-info-bottom{
+	width: 50%;
+	height: 30px;
+	float: left;
+}
+.qna-update-info-top input[type="date" i]{
+	width: 130px;
+	height: 30px;
+	border: none;
+	text-align: center;
+	outline: none;
+}
+.qna-update-info-bottom input[type="text" i]{
+	width: 100px;
+	height: 30px;
+	border: none;
+	text-align: center;
+	outline: none;
+}
+.qna-update-imgbox{
+	width: 100%;
+	height: 300px;
+	float: left;
+}
+.qna-update-imgbox img{
+	width: 300px;
+	height: 300px;
+}
+.qna-update-title{
+	width: 700px;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.qna-update-title span{
+	color: #ff8000; 
+	font-size: 15px; 
+	float: left;
+}
+.qna-update-title h3{
+	float: left; 
+	margin-left: 10px; 
+	margin-bottom: 10px;
+}
+.qna-update-contents{
+	width: 900px;
+	border: none;
+	clear: both;
+}
+.qna-update-contents textarea{
+	width: 100%;
+	height: 499px;
+	font-size: 18px;
+	padding-top: 10px;
+	padding-left: 10px;
+	resize: none;
+	outline: none;
+	border: none;
+	white-space: pre;
+}
+
+.qna-update-contents input[type="text" i] {
+	width: 100%;
+	height: 499px;
+	font-size: 18px;
+	padding-left: 10px;
+}
+
+.qna-update-btnbox {
+	width: 400px;
+	height: 40px;
+	float: right;
+	padding-top: 10px;
+}
+
+.qna-update-btnbox input[type="submit" i],[type="button" i] {
+	text-align: center;
+	float: right;
+	width: 60px;
+	height: 25px;
+	margin: 5px 0 0 3px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+
+
+.qna-update-btnbox input[type="submit" i]:hover, .qna-update-btnbox input[type="button" i]:hover, 
+.qna-update-replywritebox input[type="submit" i]:hover, .qna-update-replywritebox input[type="button" i]:hover{
+	background-color: #ffea2d;
+}
+.qna-update-replywritebox{
+	width: 900px;
+	height: 80px;
+	clear: both;
+	border-bottom: 1px solid navy;
+}
+.qna-update-replywritebox textarea{
+	width: 800px;
+	height: 60px;
+	resize: none;
+	outline: none;
+	margin-top: 10px;
+	background: #f6f6f6;
+	overflow: hidden;
+}
+.qna-update-replywritebox input[type="submit" i], .qna-update-replywritebox input[type="button" i]{
+	text-align: center;
+	float: right;
+	width: 80px;
+	height: 50px;
+	margin: 15px 0 0 5px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+.qna-update-replybox{
+	width: 100%;
+	min-height: 76px;
+	
+}
+.qna-update-replybox-one{
+	width: 100%;
+	min-height: 75px;
+	border-bottom: 1px solid navy;
+}
+.qna-update-replybox-photo{
+	width: 75px;
+	height: 75px;
+	float: left;
+}
+.qna-update-replybox-photo img{
+	width: 75px;
+	height: 75px;
+}
+.qna-update-replybox-contents{
+	width: 810px;
+	height: 75px;
+	float: left;
+	padding-left: 10px;
+}
+.qna-update-replybox-contents p{
+	width: 730px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.5;
+	margin-bottom: 5px;
+	float: left;
+}
+.qna-update-replybox-contents span{
+	width: 80px;
+	height: 20px;
+	font-size: 12px;
+	float: left;
+	overflow: hidden;
+	line-height: 1.5;
+	text-align: right;
+}
+.qna-update-replybox-contents textarea{
+	width: 750px;
+	height: 45px;
+	border: none;
+	resize: none;
+	outline: none;
+	overflow: hidden;
+	
+}
+.qna-update-writebox{
+	width: 900px;
+	margin: 0 0 10px 10px;
+	float: right;
+	border: none;
+}
+

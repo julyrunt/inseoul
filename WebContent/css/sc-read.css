@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a { text-decoration: none; }
+
+section {
+	position: relative;
+	min-height: calc(100% - 1000px);
+}
+.sc-read-h1box h1{
+	width:900px;
+	text-align : center;
+	margin: 20px auto;
+}
+
+.sc-read-bigbox {
+	width: 900px;
+	margin: 20px auto;
+}
+
+#basicInfoArea{
+	margin: 0 auto;
+}
+
+#basicInfoArea font{
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#sc-read-title{
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+}
+#sc-read-titleList{
+	margin-top: 10px;
+	height: 20px;
+}
+
+#sc-read-titleList ul{
+	list-style: none;
+	height: 20px;
+	overflow: hidden;
+}
+
+#sc-read-titleList li {
+	float: left;
+	margin-right: 20px;
+}
+
+#sc-read-titleList li:nth-child(3){
+	width: 90px;
+	overflow: hidden;
+}
+#sc-read-contents {
+	font-size: 20px;
+	font-weight: lighter;
+	border-bottom: 1px solid navy;
+	padding: 20px;
+}
+
+.sc-read-reList {
+	margin-top: 10px;
+	height: 30px;
+}
+
+.sc-read-reList ul{
+	list-style: none;
+	height: 30px;
+}
+
+.sc-read-reList li{
+	float: right;
+	margin-left: 20px;
+}

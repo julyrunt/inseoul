@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Travels">
+	<select id="spot_listcount" resultType="Integer">
+		select count(*) from locations
+	</select>
+
+	<select id="spot_all" parameterType="Integer" resultType="com.inseoul.vo.Tourist_SpotBean">
+		select * from locations limit #{startrow}, 8
+	</select>
+	
+	<select id="spot_one" parameterType="Integer" resultType="com.inseoul.vo.Tourist_SpotBean">
+		select * from locations where lid = #{lid}
+	</select>
+	
+	<insert id="travels_write" parameterType="com.inseoul.vo.TravelsBean">
+		insert into travels (lid, uid, title, contents, readcount, img01, img02, img03) 
+		values(#{lid}, #{uid}, #{title}, #{contents}, 0, #{img01}, #{img02}, #{img03});
+	</insert>
+	
+	<select id="travels_select" parameterType="Integer" resultType="com.inseoul.vo.TravelsBean">
+		select tr.*, users.nick, (select count(*) from `travels-reply` tre where tr.tid = tre.tid) replycount, 
+		(select count(*) from `travels-recommend` reco where reco.tid = tr.tid) recommendCount 
+		from travels tr join users on tr.uid=users.uid where lid = #{lid} order by date desc limit 5
+	</select>
+	
+	<select id="bucket_select" parameterType="Integer" resultType="com.inseoul.vo.BucketBean">
+		SELECT b.*, users.nick,
+		(select l.name from locations l where b.lid=l.lid) name,
+		(select l.img from locations l where b.lid=l.lid) img,
+		(select count(*) from `bucket-reply` br where b.bid=br.bid) replyCount,
+		(select count(*) from `bucket-recommend` brc where b.bid=brc.bid) recommendCount
+		FROM buckets b join users on b.uid=users.uid
+		where lid = #{lid} limit 5
+	</select>
+	
+	<select id="album_select" parameterType="Integer" resultType="com.inseoul.vo.AlbumBean">
+		SELECT a.*, (select l.name from locations l where l.lid=a.lid) name, users.nick,
+		(select count(*) from `album-reply` ar where a.aid=ar.aid) replyCount,
+		(select count(*) from `album-recommend` arc where a.aid=arc.aid) recommendCount
+		FROM albums a join users on a.uid=users.uid where lid = #{lid} limit 4
+	</select>
+	
+	<select id="route_select" parameterType="Integer" resultType="com.inseoul.vo.Routemaps" >
+	 select a.*, u.nick, 
+          (select l.name from `locations` l where l.lid = a.day1_0) day1_0_name,
+          (select l.name from `locations` l where l.lid = a.day1_1) day1_1_name,
+          (select l.name from `locations` l where l.lid = a.day1_2) day1_2_name,
+          (select l.name from `locations` l where l.lid = a.day1_3) day1_3_name,
+          (select l.name from `locations` l where l.lid = a.day2_0) day2_0_name,
+          (select l.name from `locations` l where l.lid = a.day2_1) day2_1_name,
+          (select l.name from `locations` l where l.lid = a.day2_2) day2_2_name,
+          (select l.name from `locations` l where l.lid = a.day2_3) day2_3_name,
+          (select l.name from `locations` l where l.lid = a.day3_0) day3_0_name,
+          (select l.name from `locations` l where l.lid = a.day3_1) day3_1_name,
+          (select l.name from `locations` l where l.lid = a.day3_2) day3_2_name,
+          (select l.name from `locations` l where l.lid = a.day3_3) day3_3_name,
+          (select l.name from `locations` l where l.lid = a.day4_0) day4_0_name,
+          (select l.name from `locations` l where l.lid = a.day4_1) day4_1_name,
+          (select l.name from `locations` l where l.lid = a.day4_2) day4_2_name,
+          (select l.name from `locations` l where l.lid = a.day4_3) day4_3_name,
+          (select l.name from `locations` l where l.lid = a.day5_0) day5_0_name,
+          (select l.name from `locations` l where l.lid = a.day5_1) day5_1_name,
+          (select l.name from `locations` l where l.lid = a.day5_2) day5_2_name,
+          (select l.name from `locations` l where l.lid = a.day5_3) day5_3_name,
+          (select l.name from `locations` l where l.lid = a.day6_0) day6_0_name,
+          (select l.name from `locations` l where l.lid = a.day6_1) day6_1_name,
+          (select l.name from `locations` l where l.lid = a.day6_2) day6_2_name,
+          (select l.name from `locations` l where l.lid = a.day6_3) day6_3_name,
+          (select l.name from `locations` l where l.lid = a.day7_0) day7_0_name,
+          (select l.name from `locations` l where l.lid = a.day7_1) day7_1_name,
+          (select l.name from `locations` l where l.lid = a.day7_2) day7_2_name,
+          (select l.name from `locations` l where l.lid = a.day7_3) day7_3_name 
+          
+        from routemaps a  
+        left join users u on u.uid = a.uid where day1_0 = #{lid} order by writeday desc limit 4 
+	</select>
+	
+	<select id="travels_listcount" resultType="Integer">
+		select count(*) from travels
+	</select>
+	
+	<select id="travels_all" parameterType="Integer" resultType="com.inseoul.vo.TravelsBean">
+		select travels.*, users.nick, locations.name, (select count(*) from `travels-reply` tr where tr.tid=travels.tid) replycount 
+		from travels join users on travels.uid=users.uid  
+		join locations on locations.lid=travels.lid order by date desc limit #{startrow}, 5
+	</select>
+	
+	<select id="travels_one" parameterType="Integer" resultType="com.inseoul.vo.TravelsBean">
+		SELECT tr.*, users.nick, users.photo pf, lo.name FROM travels tr join users on tr.uid=users.uid 
+		join locations lo on tr.lid=lo.lid where tid = #{tid}
+	</select>
+	
+	<update id="travels_readcount" parameterType="Integer">
+		update travels set readcount = readcount+1 where tid = #{tid}
+	</update>
+	
+	<select id="travels_likeCount" parameterType="Map" resultType="Integer">
+		select count(*) from `travels-recommend` where tid = #{tid} and uid = #{uid}
+	</select>
+	
+	<select id="travels_replyCount" parameterType="Integer" resultType="Integer">
+		select count(*) from `travels-reply` where tid = #{tid}
+	</select>
+	
+	<select id="travels_replyList" parameterType="Map" resultType="com.inseoul.vo.ReplyBean">
+		SELECT tr.*, users.nick, users.photo FROM `travels-reply` tr join users on tr.uid=users.uid where tid = #{tid} limit #{startrow}, 10
+	</select>
+	
+	<insert id="travels_replyWrite" parameterType="com.inseoul.vo.ReplyBean">
+		insert into `travels-reply` (tid, uid, contents) values (#{tid}, #{uid}, #{contents})
+	</insert>
+	
+	<delete id="travels_replyDelete" parameterType="Integer">
+		delete from `travels-reply` where rid = #{rid}
+	</delete>
+	
+	<delete id="travels_delete" parameterType="Integer">
+		delete from travels where tid = #{tid}
+	</delete>
+	
+	<update id="travels_updating" parameterType="com.inseoul.vo.TravelsBean">
+		update travels set title = #{title}, contents = #{contents} where tid = #{tid}
+	</update>
+	
+	<select id="travels_update" parameterType="Integer" resultType="com.inseoul.vo.TravelsBean">
+		select * from travels where tid = #{tid}
+	</select>
+	
+	<select id="travels_like_select" parameterType="Map" resultType="Integer">
+		select count(*) from `travels-recommend` where tid = #{tid} and uid = #{uid}
+	</select>
+	
+	<insert id="travels_like_insert" parameterType="Map">
+		insert into `travels-recommend` (tid, uid) values (#{tid}, #{uid})
+	</insert>
+	
+	<delete id="travels_like_delete" parameterType="Map">
+		delete from `travels-recommend` where tid = #{tid} and uid = #{uid}
+	</delete>
+</mapper>

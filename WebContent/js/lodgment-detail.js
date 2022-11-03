@@ -94,6 +94,7 @@ function modaloff(){
 	modal.style.display = 'none';
 }
 
+/* 모달 리뷰 작성 */
 function reviewWrite(uid){
 	var title = document.getElementById('re_title').value;
 	var contents = document.getElementById('re_contents').value;

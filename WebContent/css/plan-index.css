@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+section {
+	width:1500px;
+	position: relative;
+	min-height: calc(100% - 424px);
+	margin: 0 auto;
+}
+
+.pl-bigbox {
+	width: 1500px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+
+.pl-bigbox a {
+	text-decoration: none;
+}
+
+.pl-toplist {
+	width: 1500px;
+	height: 50px;
+	border-bottom: 1px solid;
+	border-bottom-color: #000080;
+	float: left;
+	list-style: none;
+	position: relative;
+}
+
+.pl-toplist ul {
+	float: left;
+	list-style: none;
+	margin: 13px 0 0 10px;
+}
+
+.pl-toplist li {
+	float: left;
+	margin: 0 3px;
+	font-size: 18px;
+	color: #000080;
+}
+
+.pl-midbox {
+	width: 1000px;
+}
+
+#pl-mapbox{
+	border : 1px solid black;
+	width: 1498px;
+	height: 900px;
+	z-index: 997;
+	border-top: none;
+}
+.pl-lcbox{
+	display: none;
+}
+.pl-longi{
+	display: none;
+}
+.pl-lati{
+	display: none;
+}
+.pl-lcaddr{
+	display: none;
+}
+.view-lcname{
+	width: 150px;
+	height: 25px;
+	text-overflow: ellipsis;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	overflow: hidden;
+}
+.view-lcaddr{
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+}
+.view-lcdt{
+	width: 100%;
+}
+/* .wrap{ */
+/* 	background-color: white; */
+/* } */
+.lc-title{
+	font-size: 14px;
+	font-weight: bold;
+	background-color: skyblue;
+}
+.lc-img{
+	float: left;
+}
+
+.wrap {
+	position: absolute;
+	left: 0;
+	bottom: 40px;
+	width: 288px;
+	height: 132px;
+	margin-left: -144px;
+	text-align: left;
+	overflow: hidden;
+	font-size: 12px;
+	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+	line-height: 1.5;
+}
+.wrap * {
+	padding: 0;
+	margin: 0;
+}
+
+.wrap .info {
+	width: 286px;
+	height: 120px;
+	border-radius: 5px;
+	border-bottom: 2px solid #ccc;
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+	background: #fff;
+}
+
+.wrap .info:nth-child(1) {
+	border: 0;
+	box-shadow: 0px 1px 2px #888;
+}
+
+.info .title {
+	padding: 5px 0 0 10px;
+	height: 30px;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.info .title-text{
+	width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 100%;
+}
+
+.info .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #888;
+	width: 17px;
+	height: 17px;
+	background:
+		url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+}
+
+.info .close:hover {
+	cursor: pointer;
+}
+
+.info .body {
+	position: relative;
+	overflow: hidden;
+}
+
+.info .desc {
+	position: relative;
+	margin: 13px 0 0 90px;
+	height: 75px;
+}
+
+.desc .ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.desc .jibun {
+	font-size: 11px;
+	color: #888;
+	margin-top: -2px;
+}
+
+.info .img {
+	position: absolute;
+	top: 6px;
+	left: 5px;
+	width: 73px;
+	height: 71px;
+	border: 1px solid #ddd;
+	color: #888;
+	overflow: hidden;
+}
+
+.info:after {
+	content: '';
+	position: absolute;
+	margin-left: -12px;
+	left: 50%;
+	bottom: 0;
+	width: 22px;
+	height: 12px;
+	background:
+		url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+}
+
+.info .link {
+	color: #5085BB;
+}
+.info .addbox{
+	right:5px;
+	position:absolute;
+	width: 60px;
+	height: 30px;
+}
+.info .addbox input[type="button"]{
+	font-weight: bold;
+	font-size: 12px;
+	width: 100%;
+	height: 100%;
+}
+#pageList{
+	text-align: center;
+}
+#select-date{
+	font-size: 20px;
+	padding:10px;
+	width:100%;
+	height:30px;
+	float: left;
+}
+#bottom-box{
+	width: 1500px;
+	height: 400px;
+}
+#title-box{
+	width: 100%;
+	height: 60px;
+	float: left;
+	font-weight: bold;
+}
+#title-box input[type="text"]{
+	width: 650px;
+	height: 50px;
+}
+
+#ovx-box{
+	width: fit-content;
+	max-width:1500px;
+	overflow-x:auto;
+    white-space: nowrap;
+    overflow-y:hidden;
+}
+#plan-big-box{
+	width: fit-content;
+	height:274px;
+    overflow-x:auto;
+    white-space: nowrap;
+    overflow-y:hidden;
+}
+/* #plan-big-box::-webkit-scrollbar{ */
+/* 	display:none; */
+/* } */
+
+.plan-box{
+	display: inline-block;
+	white-space: nowrap;
+	border-radius: 15px;
+	width: 375px;
+	height: 248px;
+	border: 1px solid black;
+	margin: 0 5px 0 5px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.slt{
+	border: 1px solid red;
+}
+
+.plan-title {
+	padding:10px;
+	width: 100%;
+	height: 30px;
+	background-color: black;
+	color: white;
+	position: relative;
+}
+
+.slt .plan-title {
+	background-color: red;
+}
+
+.plan-title .plandivbtn{
+	float: right;
+	width: 80px;
+	height: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+.plan-title .plandivp{
+	float: left;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.plan-box-title p{
+	font-size: 22px;
+	font-weight: bo
+}
+#plan-btn{
+	width:100%
+	height: 60px;
+	margin-top: 10px;
+}
+#plan-btn input[type="button"]{
+	margin: 0 3px 0 3px;
+	float: right;
+	width: 80px;
+	height: 60px;
+	border-radius: 10px;
+}
+#select-date input[type="date"]{
+	border-radius: 5px;
+	text-align: center;
+	border: 1.8px solid;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+}
+.addinfo{
+	width:100%;
+	height:49px;
+	float: left;
+}
+.addimg{
+	float:left;
+	width: 49px;
+	height: 49px;
+	overflow: 
+}
+.addtitle{
+	padding:14px;
+	float: left;
+	width: 150px;
+	height: 25px;
+	font-size: 15px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	font-weight: bold;
+}
+.addlink{
+	width:60px;
+	height:20px;
+	float: left;
+	font-size: 12px;
+}
+.addinfo input[type="button"]{
+	float: right;
+	width: 70px;
+	height: 49px;
+	font-weight: bold;
+}
+
+.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
+.map_wrap {position:relative;width:100%;height:500px;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:300px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 998;font-size:12px;border-radius: 10px;}
+
+.bg_white {background:#fff;}
+#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
+#menu_wrap .option{text-align: center;}
+#menu_wrap .option p {margin:10px 0;}  
+#menu_wrap .option button {margin-left:5px;}
+#placesList li {list-style: none;}
+#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item span {display: block;margin-top:4px;}
+#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#placesList .item .sideinfo{padding:10px 0 10px 55px;}
+#placesList .sideinfo .gray {color:#8a8a8a;}
+#placesList .sideinfo .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
+#placesList .sideinfo .tel {color:#009900;}
+#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+#placesList .item .marker_1 {background-position: 0 -10px;}
+#placesList .item .marker_2 {background-position: 0 -56px;}
+#placesList .item .marker_3 {background-position: 0 -102px}
+#placesList .item .marker_4 {background-position: 0 -148px;}
+#placesList .item .marker_5 {background-position: 0 -194px;}
+#placesList .item .marker_6 {background-position: 0 -240px;}
+#placesList .item .marker_7 {background-position: 0 -286px;}
+#placesList .item .marker_8 {background-position: 0 -332px;}
+#placesList .item .marker_9 {background-position: 0 -378px;}
+#placesList .item .marker_10 {background-position: 0 -423px;}
+#placesList .item .marker_11 {background-position: 0 -470px;}
+#placesList .item .marker_12 {background-position: 0 -516px;}
+#placesList .item .marker_13 {background-position: 0 -562px;}
+#placesList .item .marker_14 {background-position: 0 -608px;}
+#placesList .item .marker_15 {background-position: 0 -654px;}
+#pagination {margin:10px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:10px;}
+#pagination .on {font-weight: bold; cursor: default;color:#777;}

@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+section{
+	position: relative;
+	
+}
+#_big{
+	width: 1200px;
+	height: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+#_big h1{
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+#content_big{
+	width: 500px;
+	margin: 20px auto;
+}
+#content_left{
+	width: 30%;
+	float: left;
+}
+#content_left li{
+	list-style: none;
+	font-size: 20px;
+	line-height: 3;
+	text-align: right;
+	border-bottom: 1px solid navy;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+}
+#content_left li:nth-child(2n){
+	background-color: rgb(245, 245, 245);
+}
+
+#content_right{
+	width: 70%;
+	float: left;
+	
+}
+#content_right li{
+	list-style: none;
+	font-size: 20px;
+	line-height: 3;
+	text-align: center;
+	border-bottom: 1px solid navy;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+}
+#content_right li:nth-child(2n){
+	background-color: rgb(245, 245, 245);
+}
+#btn_box{
+	width: 100%;
+	height: 50px;
+	margin: 10px 0;
+	clear: both;
+	text-align: center;
+}
+#btn_box input[type="button"]{
+	width: 100px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+	margin: 0 15px;
+	cursor: pointer;
+	border: none;
+	background-color: navy;
+	color: white;
+}
+#btn_box input[type="button"]:hover{
+	width: 100px;
+	height: 30px;
+	position: relative;
+	top: 20px;
+	margin: 0 15px;
+	cursor: pointer;
+	border: none;
+	background-color: buttonface;
+	color: navy;
+}

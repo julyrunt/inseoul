@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	position: relative;
+	min-height: calc(100% - 1000px);
+}
+.sc-write-h1box h1{
+	width:900px;
+	text-align : center;
+	margin: 20px auto;
+}
+
+.sc-write-bigbox {
+	width: 1200px;
+	margin: 20px auto;
+}
+
+table {
+	margin: auto;
+	width: 800px;
+}
+
+.td_left {
+	text-align: center;
+	width: 250px;
+	background: gray;
+	color: white;
+	font-size: 30px;
+}
+
+.td_right {
+	width: 550px;
+}
+
+#commandCell {
+	text-align: center;
+}
+.tr1 {
+	height: 50px;
+}
+.tr1 input[type="text"]{
+	width: 100%;
+	height: 50px;
+	font-size: 18px;
+}
+.tr1 input[type="password"]{
+	width: 100%;
+	height: 50px;
+	font-size: 18px;
+}
+.tr3{
+	height: 40px;
+}
+.tr3 input[type="file"]{
+	width: 100%;
+	height: 35px;
+	font-size: 18px;
+}
+.tr3 input[type="radio"]{
+ 	width: 10%; 
+	height: 15px; 
+}
+.tr3 font{
+	font-size: 22px;
+	font-weight: bold;
+}
+.tr2 {
+	height: 400px;
+}
+.tr2 textarea{
+	width: 100%;
+	height: 400px;
+	resize: none;
+	outline: none;
+	font-size: 18px;
+}
+#sc-write-button{
+	width: 800px;
+	margin: 0 auto;
+	float: right;
+}
+#commandCell{
+	width: 500px;
+	height: 50px;
+	left: 633px;
+}
+#commandCell input[type="submit"] {
+	width: 100px;
+	height: 40px;
+}
+#commandCell input[type="reset"] {
+		width: 120px;
+	height: 40px;
+}

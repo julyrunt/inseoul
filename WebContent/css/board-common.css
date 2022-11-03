@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.board-sidebox {
+	width: 250px;
+	height: 200px;
+	background-color: navy;
+	float: left;
+	margin-top: 10px;
+	color: black;
+}
+
+.board-sidebox a {
+	text-decoration: none;
+	color: white;
+}
+.board-sidebox a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.board-sidebox ul {
+	width: 250px;
+	height: 200px;
+	list-style: none;
+}
+
+.board-sidebox li {
+	width: 250px;
+	height: 49px;
+	font-size: 18px;
+	color: #000080;
+	line-height: 47px;
+	border-bottom: 1px solid black;
+	color: white;
+}
+.board-sidebox li:hover{
+	text-decoration: underline;
+}
+.board-sidebox span {
+	padding: 20px 0 0 30px;
+}

@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a { text-decoration: none; }
+
+section {
+	position: relative;
+	min-height: calc(100% - 900px);
+}
+
+.sc-topbox{
+	width: 1200px;
+}
+
+.sc-bigbox {
+	width: 1200px;
+	margin: 20px auto;
+}
+
+.sc-toplist {
+	width: 1200px;
+	height: 50px;
+	border-bottom: 1px solid;
+	border-bottom-color: #000080;
+	float: left;
+	list-style: none;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.sc-toplist ul {
+	float: left;
+	list-style: none;
+	margin: 13px 0 0 10px;
+}
+
+.sc-toplist li {
+	float: left;
+	margin: 0 3px;
+	font-size: 16px;
+	color: #000080;
+}
+.sc-h1box h1{
+	width:900px;
+	text-align : center;
+	margin: 20px auto;
+}
+.sc-searchbox{
+	width: 750px;
+	margin: 40px auto;
+}
+.sc-searchbox input[type="text"] {
+	width: 700px;
+	height: 60px;
+	margin: 0 auto;
+	font-size: 20px;
+}
+.sc-searchbox span{
+	width: 50px;
+	height: 60px;
+	float: right;
+	font-size: 60px;
+}
+
+table{
+	width: 1200px;
+	margin: 40 auto;
+}
+thead{
+	text-align: center;
+}
+.td-text-center{
+	text-align: center;
+}
+#sc-top{
+    font-size: 25px;
+	font-weight: bold;
+	background-color: navy;
+	color: white;
+}
+
+#sc-top td{
+	border: 1px solid white;
+}
+.sc-qbutton{
+	width:600px;
+	text-align: center;
+	margin: 20px auto;
+	height: 100px;
+}
+.sc-qbutton input[type="button"] {
+	margin-top: 10px;
+	width:120px;
+	height:40px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+
+.sc-qbutton input[type="button"]:active {
+	background-color: #E9FF2D;
+}
+
+.sc-qbutton input[type="button"]:active {
+	background-color: #FFFFFF;
+}
+
+#btLogin:hover, #btSignUp:hover {
+	background-color: #ffea2d;
+}
+.td1{
+	width: 150px;
+}
+.sc-index-List{
+	font-size: 20px;
+	font-weight: bold;
+	height: 50px;
+	overflow: hidden;
+}
+.sc-index-List font{
+	height: 40px;
+	overflow: hidden;
+}
+#pageList {
+	margin: 0 auto;
+	height: 20px;
+}
+.sc-index-page{
+	margin: 0 auto;
+	font-size: 20px;
+	text-align: center;
+}
+td{
+	border: 1px solid black;
+}
+.panel-faq-container {
+  margin-bottom: -16px;
+}
+.panel-faq-title {
+  color: #00eaea;
+  cursor: pointer;
+}
+.panel-faq-contents {
+  height: 0;
+  overflow: hidden;
+  /* 변화가 시작되는 쪽에다가 transition 적용해준다 0 -> 300px 
+  왜? 닫기 버튼을 누를 때 변화가 티남 */
+  transition: all 1s;
+}
+#btn-all-close {
+  margin-bottom: 10px;
+  background-color: #726996;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 25px;
+  float: right;
+}
+#btn-all-close:hover {
+  background-color: yellow;
+  color: #000;
+  transition: all 0.35s;
+}
+.active {
+  display: block;
+  /* 높이를 정해줘야지만 transition이 적용됨 */
+  height: 300px;
+}

@@ -1,0 +1,266 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+#travels_{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 30px 0 0 0;
+}
+section{
+	width: 1200px;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.travels-detail-topbox{
+	width: 900px;
+	height: 50px;
+	float: right;
+	margin-top: 5px;
+	border-bottom: 1px solid navy;
+}
+.travels-detail-top-imgbox{
+	width: 40px;
+	height: 40px;
+	margin-top: 5px;
+	margin-right: 10px;
+	float: left;
+}
+.travels-detail-top-imgbox img{
+	width: 40px;
+	height: 40px;
+}
+.travels-detail-top-writerbox{
+	width: 150px;
+	height: 50px;
+	float: left;
+	line-height: 1.5;
+}
+.travels-detail-top-writerbox span:first-child{
+	font-weight: bold;
+	font-size: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+}
+.travels-detail-top-writerbox span:last-child{
+	font-size: 12px;
+}
+.travels-detail-btnbox {
+	width: 400px;
+	height: 40px;
+	float: right;
+/* 	padding-top: 10px; */
+}
+
+.travels-detail-btnbox input[type="submit" i],[type="button" i] {
+	text-align: center;
+	float: right;
+	width: 60px;
+	height: 25px;
+	margin: 20px 0 0 3px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+.travels-detail-btnbox input[type="submit" i]:hover, .travels-detail-btnbox input[type="button" i]:hover,
+.travels-detail-replywritebox input[type="button" i]:hover{
+	background-color: #ffea2d;
+}
+
+#travels-contents{
+	width: 900px;
+	margin: 0 0 10px 10px;
+	float: right;
+	border: none;
+	background-color: rgb(245, 245, 245);
+	
+}
+#contents-title{
+	width: 100%;
+	height: 70px;
+	line-height: 2;
+	padding: 10px 0 0 10px;
+}
+#contents-title a, a:visited{
+	text-decoration: none;
+	color: black;
+}
+#contents-title h3{
+	float: left;
+}
+#contents-title p{
+	line-height: 3.5;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 10px; 
+}
+#contents-title span{
+	color: #ff8000; 
+	font-size: 15px; 
+	clear: both;
+	float: left;
+}
+#contents-title h4{
+	float: left;
+	padding-left: 10px;
+}
+#imagesbox{
+	width: 100%;
+	height: 250px;
+	
+}
+#imagesbox ul{
+	margin: 10px 0 0 60px;
+}
+#imagesbox li{
+	list-style: none;
+	float: left;
+}
+#imagesbox li:nth-child(2n){
+	margin: 0 15px;	
+}
+#imagesbox div{
+	width: 250px;
+	height: 250px;
+	background-size: cover;
+	
+}
+#contents-content{
+	width: 100%;
+	min-height: 250px;
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 10px;
+}
+#contents-content pre{
+	line-height: 2;
+}
+
+#like_box{
+	width: 100%;
+	height: 50px;
+	float: right;
+	text-align: center;
+	margin: 10px 0 0 0;
+	padding-bottom: 15px;
+}
+#like_box img{
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.travels-detail-replywritebox{
+	width: 900px;
+	height: 80px;
+	clear: both;
+	border-bottom: 1px solid navy;
+}
+.travels-detail-replywritebox textarea{
+	width: 800px;
+	height: 60px;
+	resize: none;
+	outline: none;
+	margin-top: 10px;
+	background: #f6f6f6;
+	overflow: hidden;
+}
+.travels-detail-replywritebox input[type="submit" i], .travels-detail-replywritebox input[type="button" i]{
+	text-align: center;
+	float: right;
+	width: 80px;
+	height: 50px;
+	margin: 15px 0 0 5px;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+}
+.travels-detail-replybox{
+	width: 100%;
+	
+	
+}
+.travels-detail-replybox-one{
+	width: 100%;
+	height: 75px;
+	margin-top: 1px;
+	border-bottom: 1px solid navy;
+	display: inline-block;
+}
+.travels-detail-replybox-photo{
+	width: 75px;
+	height: 75px;
+	float: left;
+}
+.travels-detail-replybox-photo img{
+	width: 75px;
+	height: 75px;
+}
+.travels-detail-replybox-contents{
+	width: 810px;
+	height: 75px;
+	float: left;
+	padding-left: 10px;
+}
+.travels-detail-replybox-contents p{
+	width: 730px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.5;
+	margin-bottom: 5px;
+	float: left;
+}
+.travels-detail-replybox-contents span{
+	width: 80px;
+	height: 20px;
+	font-size: 12px;
+	float: left;
+	overflow: hidden;
+	line-height: 1.5;
+	text-align: right;
+}
+.travels-detail-replybox-contents textarea{
+	width: 730px;
+	height: 45px;
+	border: none;
+	resize: none;
+	outline: none;
+	overflow: hidden;
+	clear: both;
+}
+.travels-detail-replydeletebox{
+	width: 80px;
+	height: 45px;
+	text-align: right;
+	float: right;
+	line-height: 2;
+}
+
+form{
+	width: 900px;
+	float: right;
+}
+#pageList {
+	margin: 10px auto;
+	width: 900px;
+	min-height: calc(100% - 1200px);
+	height: 30px;
+	text-align: center;
+	flex-direction: row;
+    justify-content: center;
+}
+#pageList a, a:visited{
+	color: black;
+	height: 30px;
+	text-decoration: none;
+}
+#pageList a:hover {
+	font-weight: bold;
+	color: gray;
+}

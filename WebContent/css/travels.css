@@ -1,0 +1,233 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	width: 1200px;
+	display: inline-block;
+	position: relative;
+	
+}
+.travels-bigbox {
+	width: 1200px;
+	margin: 10px auto 0 auto;
+	min-height: calc(100% - 200px);
+}
+.travels-toplist {
+	width: 1200px;
+	height: 20px;
+/* 	border-bottom: 1px solid; */
+/* 	border-bottom-color: #000080; */
+	float: left;
+	list-style: none;
+}
+.travels-toplist ul {
+	float: left;
+	list-style: none;
+	margin: 13px 0 0 10px;
+}
+
+.travels-toplist li {
+	float: left;
+	margin: 0 3px;
+	font-size: 18px;
+	color: #000080;
+}
+#travels-midbox {
+	width: 1200px;
+	
+/* 	height: 1000px; */
+	clear: both;
+}
+#travels-topsection {
+	width: 900px;
+	height: 8px;
+	float: right;
+	margin-top: 5px;
+}
+#travels-contentsAll{
+	width: 900px;
+	float: right;
+}
+#travels-contentsAll a, a:visited{
+	text-decoration: none;
+	color: black;
+}
+
+.travels-contentsbox {
+	position:relative;
+	width: 898px;
+	height: 148px;
+	background-color: white;
+	margin: 10px 0 10px 10px;
+	float: right;
+	border: 1px solid navy;
+	border-radius: 5px;
+}
+.travels-contents-img {
+	width: 149px;
+	height: 149px;
+	border-right: 1px solid navy;
+	float: left;
+}
+.travels-contents-img img{
+	width: 149px;
+	height: 148px;
+}
+.travels-contents-text {
+	width: 735px;
+	height: 100px;
+	padding-top: 10px;
+	padding-left: 10px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+.travels-contents-lefttext{
+	width: 600px;
+	height: 100px;
+	float: left;
+}
+.travels-contents-lefttext h4{
+	color: #ff8000; 
+	font-size: 13px; 
+	float: left;
+	line-height: 2;
+}
+
+.travels-contents-lefttext span {
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 5px;
+	width: 500px;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	
+}
+.travels-contents-lefttext a, a:visited{
+	color: black;
+	text-decoration: none;
+}
+.travels-contents-long{
+	height: 55px;
+	font-size: 12px;
+	margin-top: 30px;
+	clear: both;
+}
+.travels-contents-long-date{
+	width: 50%;
+	height: 20px;
+	float: left;
+	clear: both;
+}
+
+.travels-contents-long a > span{
+	height:25px;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 1.6;
+	margin-top: 8px;
+	overflow: hidden;
+	clear: both;
+	float: left;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+}
+.travels-contents-long a, a:visited{
+	color: black;
+	text-decoration: none;
+}
+.travels-contents-long .l_title{
+	font-size: 16px;
+}
+.travels-contents-long .l_contents{
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 10px;
+}
+.travels-contents-date{
+	width: 130px;
+	height: 20px;
+	font-size: 13px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	line-height: 1.5;
+}
+.travels-contents-info{
+	width: 740px;
+	height: 25px;
+	float: left;
+}
+.travels-contents-writer{
+	width: 620px;
+	height: 25px;
+	float: left;
+	margin-top: 5px;
+	padding-left: 10px;
+}
+.travels-contents-writer span{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.travels-contents-readcount{
+	width: 110px;
+	height: 25px;
+	float: right;
+	font-size: 13px;
+	
+}
+.travels-contents-readcount ul{
+	list-style: none;
+	
+}
+.travels-contents-readcount li{
+	float: left;
+}
+.travels-contents-readcount li:nth-child(2n){
+	margin: 12px 0 0 4px;
+}
+.travels-contents-readcount-s{
+	height: 25px;
+	float: left;
+	box-sizing: content-box;
+}
+.travels-contents-readcount-c{
+	box-sizing: content-box;
+}
+.material-icons {
+	font-size: 20px;
+	line-height: 2;
+	color: gray;
+}
+#pagebox{
+	
+	
+}
+#pageList {
+	margin: 10px auto;
+	width: 1200px;
+	height: 30px;
+	text-align: center;
+	flex-direction: row;
+    justify-content: center;
+}
+#pageList a, a:visited{
+	color: black;
+	height: 30px;
+	text-decoration: none;
+}
+#pageList a:hover {
+	font-weight: bold;
+	color: gray;
+}

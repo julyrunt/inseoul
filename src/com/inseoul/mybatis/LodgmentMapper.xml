@@ -1,5 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="blank">
 
+<mapper namespace="lodgment">
+	<select id="oneuser" parameterType="Integer" resultType="com.inseoul.vo.UserBean">
+		select * from users where uid = #{uid}
+	</select>
+	
+	<select id="lodgmentsList" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments limit 10
+	</select>
+	
+	<select id="lodgments_search" parameterType="String" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments where name like ('% ${search} %')
+	</select>
+	
+	<select id="lodgments_filter4" parameterType="String" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments where rating &lt;= 4
+		<foreach collection="array" item="selects">
+		and filters like concat('%',#{selects},'%')
+		</foreach>
+		limit 10
+	</select>
+	
+	<select id="lodgments_filter5" parameterType="String" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments where rating &lt;= 5 
+		<foreach collection="array" item="selects">
+		 and filters like concat('%',#{selects},'%')
+		</foreach> 
+		limit 10
+	</select>
+	
+	<select id="lodgments_filter6" parameterType="String" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments where rating = 6  
+		<foreach collection="array" item="selects">
+		and filters like concat('%',#{selects},'%')
+		</foreach> 
+		limit 10
+	</select>
+	
+	<select id="lodgments_filter7" parameterType="String" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments where rating = 7 
+		<foreach collection="array" item="selects">
+		and filters like concat('%',#{selects},'%')
+		</foreach> 
+		limit 10
+	</select>
+	
+	<select id="lodgment_detail" parameterType="Integer" resultType="com.inseoul.vo.LodgmentsBean">
+		select * from lodgments where hid = #{hid}
+	</select>
+	
+<!-- 	<select id="lodgment_detail_info" parameterType="Integer" resultType="com.inseoul.vo.Lodgment_infoBean"> -->
+<!-- 		SELECT * FROM lodgment_info where hi_id = #{hi_id} -->
+<!-- 	</select> -->
+	
+	<select id="lodgment_room_info" parameterType="Integer" resultType="com.inseoul.vo.LodgmentRoomBean">
+		select * from rooms where hid = #{hid} limit 6
+	</select>
+	
+	<select id="roomreservaion" parameterType="Integer" resultType="com.inseoul.vo.LodgmentRoomBean">
+		select rooms.*, lodgments.name, lodgments.basic_info1 as in_out 
+		from rooms 
+		join lodgments on rooms.hid=lodgments.hid where roomid = #{roomid}
+	</select>
+	
+	<insert id="reservation" parameterType="com.inseoul.vo.Lodgment_ReservationBean">
+		insert into lodgment_reservation (roomid, reservation_uid, reservation_person, reservation_price, reservation_date, reservation_checkin, reservation_checkout) 
+		values(#{roomid}, #{reservation_uid}, #{reservation_person}, #{reservation_price}, now(), #{reservation_checkin}, #{reservation_checkout})
+	</insert>
+	
+	<select id="countRnum" resultType="Integer">
+		select max(reservation_num) from lodgment_reservation
+	</select>
+	
+	<select id="reservaion_info" parameterType="Integer" resultType="com.inseoul.vo.Lodgment_ReservationBean">
+		select 
+			lr.*, ur.name as name, ur.phone as phone, (select lodgments.name FROM rooms join lodgments on rooms.hid = 
+			lodgments.hid where rooms.roomid = (select roomid from lodgment_reservation where reservation_num = #{rnum})) as hname, 
+			(select rooms.roomname FROM rooms join lodgments on rooms.hid = lodgments.hid where rooms.roomid = 
+			(select roomid from lodgment_reservation where reservation_num = #{rnum})) as rname 
+		from 
+			lodgment_reservation lr join users ur on lr.reservation_uid=ur.uid 
+		where 
+			reservation_num = #{rnum}
+	</select>
+	
+	<select id="lodgment_review" parameterType="Integer" resultType="com.inseoul.vo.Lodgment_ReviewBean">
+		SELECT lr.*, users.nick FROM lodgment_review lr join users on lr.review_uid=users.uid where review_hid = #{hid}
+	</select>
+	
+	
 </mapper>

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+.pw-topsection{
+	width: 899px;
+	height: 70px;
+	float: right;
+	border-bottom: 1px solid black;
+	line-height: 40px;
+}
+.pw-topsection p {
+	float: left;
+	height: 30px;
+	font-size: 23px;
+	margin: 15px 0 0 400px;
+}
+.pw-writebox{
+	width: 900px;
+	height: 600px;
+	margin: 0 0 10px 10px;
+	float: right;
+}
+.pw-topic-select{
+	width: 200px;
+	height: 50px;
+	float: left;
+}
+.pw-topic-select select{
+	width: 100%;
+	height: 100%;
+	display: block;
+    line-height: 34px;
+    font-size: 18px;
+    color: #ff8000;
+    padding: 0 18px 0 0;
+    text-decoration: none;
+    text-align: left;
+}
+.pw-write-name{
+	width: 700px;
+	height: 50px;
+	float: left;
+}
+.pw-write-name input[type="text" i]{
+	width: 100%;
+	height: 100%;
+	font-size: 25px;
+	font-weight: 800;
+	padding-left: 10px;
+}
+.pw-write-text{
+	width: 900px;
+	height: 549px;
+	border-bottom: 1px solid black;
+}
+.pw-write-text textarea{
+	width: 100%;
+	height: 499px;
+	font-size: 18px;
+	padding-left: 10px;
+	resize: none;
+	outline: none;
+	white-space: pre;
+}
+.pw-write-submit{
+	width: 900px;
+	height: 50px;
+}
+.pw-write-submit input[type="submit" i]{
+	text-align: center;
+	float: right;
+	width: 100px;
+	height: 50px;
+}
+.pw-write-submit input[type="button" i]{
+	text-align: center;
+	float: right;
+	width: 100px;
+	height: 50px;
+}

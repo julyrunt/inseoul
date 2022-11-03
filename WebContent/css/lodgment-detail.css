@@ -1,0 +1,494 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+/* 상단 */
+#mainbox1 {
+	width: 1200px;
+	height: 600px;
+	margin: 15px auto;
+}
+
+#mainbox1_in1 {
+	width: 550px;
+	height: 400px;
+	margin: 0px auto;
+	float: left;
+}
+
+#mainbox1_in1 img {
+	width: 550px;
+	height: 400px;
+}
+
+#thumbnail_big {
+	width: 550px;
+	height: 100px;
+	margin: auto;
+	text-align: center;
+}
+
+#thumbnail_big img {
+	width: 120px;
+	height: 100px;
+	cursor: pointer;
+}
+
+#mainbox1_in2 {
+	width: 500px;
+	height: 600px;
+	float: left;
+	margin: 0 0 0 150px;
+}
+
+#ratingbox {
+	/* 	width: 15%; */
+	height: 25px;
+	padding: 0 10px;
+	line-height: 1.8;
+	font-weight: bold;
+	margin-top: 10px;
+	float: left;
+	background-color: rgba(103, 101, 201, 1);
+	color: white;
+	border-radius: 5px;
+}
+
+#ratingbox_b {
+	/* 	width: 15%; */
+	height: 25px;
+	padding: 0 10px;
+	line-height: 1.8;
+	font-weight: bold;
+	margin-top: 10px;
+	float: left;
+	background-color: #A566FF;
+	color: white;
+	border-radius: 5px;
+}
+
+#mainbox1_in2 h1 {
+	/* 	width: 85%; */
+	/* 	width: 400px; */
+	font-size: 28px;
+	padding: 3px 0 0 10px;
+	float: left;
+}
+
+#addressbox {
+	margin: 20px 0 0 0;
+	clear: both;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#owner_comment {
+	background-color: rgb(245, 245, 245);
+	width: 460px;
+	/* 	height: 100px; */
+	padding: 25px 20px;
+	border-radius: 5px;
+	line-height: 1.5;
+}
+
+/* 탭메뉴 */
+.tabmenu {
+	max-width: 1200px;
+	height: 2100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.tabmenu ul {
+	border-bottom: 1px solid navy;
+	height: 40px;
+	position: relative;
+}
+
+.tabmenu ul li {
+	display: inline-block;
+	width: 15%;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+
+.tabmenu label {
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 600;
+}
+
+.tabmenu input[type="radio"] {
+	display: none;
+}
+
+.tabCon {
+	display: none;
+	width: 100%;
+	text-align: left;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 40px;
+	box-sizing: border-box;
+}
+
+.tabmenu input:hover ~ label {
+	text-decoration: 5px underline navy;
+	text-underline-position: under;
+}
+
+.tabmenu input:checked ~ label {
+	background: navy;
+	color: white;
+}
+
+.tabmenu input:checked ~ .tabCon {
+	display: block;
+}
+
+/* 방정보 */
+#room_bigbox {
+	width: 100%;
+	height: auto;
+}
+
+#date_sel {
+	width: 250px;
+}
+
+#date_sel input[type="date"] {
+	border: none;
+	border-bottom: 1px solid navy;
+	width: 130px;
+	text-align: center;
+	outline: none;
+}
+
+.roombox {
+	width: 1200px;
+	height: 310px;
+	margin-top: 10px;
+	border-bottom: 2px solid navy;
+}
+
+.room_img_box {
+	width: 400px;
+	height: 300px;
+	float: left;
+}
+
+.room_img_box img {
+	width: 400px;
+	height: 300px;
+}
+
+.room_info_box {
+	width: 700px;
+	height: 300px;
+	margin-left: 100px;
+	float: left;
+}
+
+.room_info_price {
+	width: 700px;
+	height: 50px;
+	float: left;
+	font-size: 20px;
+	border-bottom: ridge;
+	font-weight: bold;
+}
+
+.pricebox {
+	width: 350px;
+	height: 50px;
+	float: right;
+	text-align: right;
+	font-size: 20px;
+	border-bottom: ridge;
+	font-weight: bold;
+}
+
+.room_info_button {
+	border: none;
+	width: 700px;
+	height: 40px;
+	margin: 10px auto;
+	font-size: 15pt;
+	cursor: pointer;
+}
+
+.room_reservation_btn {
+	border: none;
+	width: 700px;
+	height: 50px;
+	margin: 17px 0 0 0;
+	font-size: 15pt;
+	background: navy;
+	color: white;
+	cursor: pointer;
+}
+
+.room_reservation_btn:hover {
+	background: crimson;
+}
+
+.reviewbox {
+	width: 1200px;
+	margin-top: 10px;
+	background: #f9f9f9;
+}
+
+/* 숙소 정보 */
+#lodgment_infobox {
+	width: 100%;
+	margin-top: 10px;
+	padding: 12px 40px 0 40px;
+	background: rgb(250, 250, 250);
+}
+
+#lodgment_infobox h3 {
+	height: 30px;
+	margin: 30px 0 10px 0;
+	clear: both;
+}
+
+#lodgment_infobox ul {
+	width: 100%;
+	min-height: 24px;
+	/* 	height: auto; */
+	border: none;
+}
+
+#lodgment_infobox li {
+	width: 100%;
+	text-align: left;
+	float: left;
+	padding-left: 14px;
+	line-height: 24px;
+	background: url("../lodgment/images/ico_bul_3.png") -1px 0 no-repeat;
+	background-size: 15px auto;
+}
+
+#last_info {
+	width: 100%;
+	height: 400px;
+	padding: 12px 0 0 0;
+	background: rgb(250, 250, 250);
+}
+/* 리뷰 */
+#title {
+	resize: none;
+	height: 25px;
+	font-size: 15px;
+	padding-top: 5px;
+	border: none;
+}
+
+#title:focus {
+	outline: none;
+}
+
+#contents {
+	resize: none;
+	font-size: 15px;
+	border: none;
+	margin-top: 10px;
+}
+
+#contents:focus {
+	outline: none;
+}
+/* button{ */
+/* 	font-family: 'Nanum Gothic', sans-serif; */
+/* 	width: 100px; */
+/* 	height: 30px; */
+/* 	border: 0; */
+/* 	background-color: #E9FF2D; */
+/* 	border: 1px solid rgba(0, 0, 0, 0.1); */
+/* 	color: navy; */
+/* 	font-weight: bold; */
+/* } */
+/* button:hover { */
+/* 	background-color: #ffea2d; */
+/* } */
+/* input[type="button"] { */
+/* 	font-family: 'Nanum Gothic', sans-serif; */
+/* 	width: 80px; */
+/* 	height: 20px; */
+/* 	border: 0; */
+/* 	background-color: #E9FF2D; */
+/* 	border: 1px solid rgba(0, 0, 0, 0.1); */
+/* 	color: navy; */
+/* 	font-weight: bold; */
+/* } */
+/* input[type="button"]:hover { */
+/* 	background-color: #ffea2d; */
+/* } */
+.hide {
+	display: none;
+}
+
+.show {
+	display: table-row;
+}
+
+.item:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tb {
+	text-align: center;
+	margin: 0 auto;
+	border: none;
+}
+
+.item span {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+}
+
+.tb th, td {
+	border-bottom: 1px solid navy;
+}
+
+.title_td {
+	padding-left: 50px;
+	text-align: left;
+}
+
+.date_box {
+	padding-top: 8px;
+	height: 40px;
+	line-height: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#fu_button_box {
+	margin-left: 400px;
+	text-align: center;
+	height: 20px;
+	margin-bottom: 15px;
+}
+
+.fu_button {
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 90px;
+	height: 20px;
+	border: none;
+	background-color: #E9FF2D;
+	color: navy;
+	font-weight: bold;
+	float: left;
+	margin: 0 50px 0 2px;
+}
+
+/* 리뷰 모달 */
+#modal.modal-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 400px;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#modal .modal-window {
+	background: rgba(69, 139, 197, 0.70);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(13.5px);
+	-webkit-backdrop-filter: blur(13.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top: -100px;
+	padding: 10px;
+}
+
+#modal .title {
+	padding-left: 10px;
+	display: inline;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+}
+
+#modal .title h2 {
+	display: inline;
+	text-align: center;
+}
+
+#modal .close-area {
+	display: inline;
+	float: right;
+	padding-right: 10px;
+	cursor: pointer;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+}
+
+#modal .content {
+	margin-top: 20px;
+	padding: 0px 10px;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+}
+#modal .content input[type="text"]{
+	width: 369px;
+	height: 20px;
+	outline: none;
+	margin-bottom: 5px;
+	padding: 0 5px;
+}
+
+#modal .content textarea{
+	width: 370px;
+	height: 370px;
+	resize: none;
+	outline: none;
+	padding: 5px 5px;
+}
+#warning{
+	width: 300px;
+	height: 25px;
+	float: left;
+}
+#review_write{
+	width: 60px;
+	height: 25px;
+	float: right;
+}

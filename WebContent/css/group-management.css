@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+section{
+	width: 1200px;
+	height: calc(100% - 424px);
+	margin: 0 auto;
+}
+#manage-table{
+	width: 100%;
+	margin: 30px auto;
+}
+
+table{
+	width: 100%;
+	text-align: center;
+	margin: 0 0 15px 0;
+	border: none;
+	font-weight: bold;
+	border-bottom: 1px solid navy;
+	border-top: 1px solid navy;
+}
+th{
+	background-color: rgb(240, 240, 240);
+}
+table input[type="button"]{
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	color: navy;
+	font-weight: bold;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	
+}
+table input[type="button"]:hover{
+	background-color: #ffea2d;
+}
+
+#manage-btn-box{
+	text-align: center;
+}
+#manage-btn-box input[type="button"]{
+	width: 90px;
+	font-weight: bold;
+	height: 28px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: navy;
+	cursor: pointer;
+}
+#manage-btn-box input[type="button"]:hover{
+	background-color: #ffea2d;
+}
