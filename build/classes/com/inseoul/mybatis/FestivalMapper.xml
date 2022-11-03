@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Festival">
+
+	<select id="festival_listcount" resultType="Integer">
+		select count(*) from festival
+	</select>
+	
+	<select id="festival_All" parameterType="Integer" resultType="com.inseoul.vo.FestivalBean">
+		select * from festival limit #{startrow}, 8
+	</select>
+	
+	<select id="festival_one" parameterType="Integer" resultType="com.inseoul.vo.FestivalBean">
+		select * from festival where fid = #{fid}
+	</select>
+</mapper>
