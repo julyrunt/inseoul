@@ -1,5 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="blank">
 
+<mapper namespace="plan"> 
+	<select id="marks" resultType="com.inseoul.vo.LocationBean"> 
+		select * from locations limit 100
+	</select>
+	<select id="sidelistcount" resultType="int"> 
+		select count(*) from locations
+	</select>
+	<select id="sidelist" resultType="com.inseoul.vo.LocationBean" parameterType="int" > 
+		select * from locations order by lid asc limit #{value},15
+	</select>
+	<insert id="ins" parameterType="com.inseoul.vo.Routemaps">
+	insert into routemaps ( uid,title,day1_0,day1_1,day1_2,day1_3,day2_0,day2_1,day2_2,day2_3,day3_0,day3_1,day3_2,day3_3,day4_0,day4_1,day4_2,day4_3,day5_0,day5_1,day5_2,day5_3,day6_0,day6_1,day6_2,day6_3,day7_0,day7_1,day7_2,day7_3,plan_start,plan_end,img ) values(#{uid},#{title},#{day1_0},#{day1_1},#{day1_2},#{day1_3},#{day2_0},#{day2_1},#{day2_2},#{day2_3},#{day3_0},#{day3_1},#{day3_2},#{day3_3},#{day4_0},#{day4_1},#{day4_2},#{day4_3},#{day5_0},#{day5_1},#{day5_2},#{day5_3},#{day6_0},#{day6_1},#{day6_2},#{day6_3},#{day7_0},#{day7_1},#{day7_2},#{day7_3},#{plan_start},#{plan_end},#{img})
+	</insert>
+	<update id="up" parameterType="com.inseoul.vo.Routemaps">
+	update routemaps set day1_0 = #{day1_0} , day1_1 = #{day1_1} , day1_2 = #{day1_2} , day1_3 = #{day1_3} , day2_0 = #{day2_0} , day2_1 = #{day2_1} , day2_2 = #{day2_2} , day2_3 = #{day2_3} , day3_0 = #{day3_0} , day3_1 = #{day3_1} , day3_2 = #{day3_2} , day3_3 = #{day3_3} , day4_0 = #{day4_0} , day4_1 = #{day4_1} , day4_2 = #{day4_2} , day4_3 = #{day4_3} , day5_0 = #{day5_0} , day5_1 = #{day5_1} , day5_2 = #{day5_2} , day5_3 = #{day5_3} , day6_0 = #{day6_0} , day6_1 = #{day6_1} , day6_2 = #{day6_2} , day6_3 = #{day6_3} , day7_0 = #{day7_0} , day7_1 = #{day7_1} , day7_2 = #{day7_2} , day7_3 = #{day7_3}  where title = #{title}
+	</update>
+	<select id="routemapss" resultType="com.inseoul.vo.Routemaps"> 
+		select * from routemaps
+	</select>
+	<select id="routemapslistcount" resultType="int"> 
+		select count(*) from routemaps
+	</select>
+	<select id="routemapslist" resultType="com.inseoul.vo.Routemaps" parameterType="int" > 
+		select * from routemaps order by mid asc limit #{value},5
+	</select>
+	<delete id="del" parameterType="int" >
+	    delete from routemaps where mid = #{mid}
+	</delete>
+	<select id="lcnames" resultType="com.inseoul.vo.Routemaps" parameterType="int">
+	  select 
+          a.*,u.nick, 
+          (select l.name from `locations` l where l.lid = a.day1_0) day1_0_name,
+          (select l.name from `locations` l where l.lid = a.day1_1) day1_1_name,
+          (select l.name from `locations` l where l.lid = a.day1_2) day1_2_name,
+          (select l.name from `locations` l where l.lid = a.day1_3) day1_3_name,
+          (select l.name from `locations` l where l.lid = a.day2_0) day2_0_name,
+          (select l.name from `locations` l where l.lid = a.day2_1) day2_1_name,
+          (select l.name from `locations` l where l.lid = a.day2_2) day2_2_name,
+          (select l.name from `locations` l where l.lid = a.day2_3) day2_3_name,
+          (select l.name from `locations` l where l.lid = a.day3_0) day3_0_name,
+          (select l.name from `locations` l where l.lid = a.day3_1) day3_1_name,
+          (select l.name from `locations` l where l.lid = a.day3_2) day3_2_name,
+          (select l.name from `locations` l where l.lid = a.day3_3) day3_3_name,
+          (select l.name from `locations` l where l.lid = a.day4_0) day4_0_name,
+          (select l.name from `locations` l where l.lid = a.day4_1) day4_1_name,
+          (select l.name from `locations` l where l.lid = a.day4_2) day4_2_name,
+          (select l.name from `locations` l where l.lid = a.day4_3) day4_3_name,
+          (select l.name from `locations` l where l.lid = a.day5_0) day5_0_name,
+          (select l.name from `locations` l where l.lid = a.day5_1) day5_1_name,
+          (select l.name from `locations` l where l.lid = a.day5_2) day5_2_name,
+          (select l.name from `locations` l where l.lid = a.day5_3) day5_3_name,
+          (select l.name from `locations` l where l.lid = a.day6_0) day6_0_name,
+          (select l.name from `locations` l where l.lid = a.day6_1) day6_1_name,
+          (select l.name from `locations` l where l.lid = a.day6_2) day6_2_name,
+          (select l.name from `locations` l where l.lid = a.day6_3) day6_3_name,
+          (select l.name from `locations` l where l.lid = a.day7_0) day7_0_name,
+          (select l.name from `locations` l where l.lid = a.day7_1) day7_1_name,
+          (select l.name from `locations` l where l.lid = a.day7_2) day7_2_name,
+          (select l.name from `locations` l where l.lid = a.day7_3) day7_3_name 
+          
+        from routemaps a  
+        left join users u on u.uid = a.uid order by mid desc limit #{value},5
+	</select>
+	
+	<select id="dtplans" resultType="com.inseoul.vo.Routemaps" parameterType="int">
+		select *,
+		(select l.name from locations l where lid = r.day1_0) day1_0_name,
+		(select l.name from locations l where lid = r.day1_1) day1_1_name,
+		(select l.name from locations l where lid = r.day1_2) day1_2_name,
+		(select l.name from locations l where lid = r.day1_3) day1_3_name,
+		(select l.name from locations l where lid = r.day2_0) day2_0_name,
+		(select l.name from locations l where lid = r.day2_1) day2_1_name,
+		(select l.name from locations l where lid = r.day2_2) day2_2_name,
+		(select l.name from locations l where lid = r.day2_3) day2_3_name,
+		(select l.name from locations l where lid = r.day3_0) day3_0_name,
+		(select l.name from locations l where lid = r.day3_1) day3_1_name,
+		(select l.name from locations l where lid = r.day3_2) day3_2_name,
+		(select l.name from locations l where lid = r.day3_3) day3_3_name,
+		(select l.name from locations l where lid = r.day4_0) day4_0_name,
+		(select l.name from locations l where lid = r.day4_1) day4_1_name,
+		(select l.name from locations l where lid = r.day4_2) day4_2_name,
+		(select l.name from locations l where lid = r.day4_3) day4_3_name,
+		(select l.name from locations l where lid = r.day5_0) day5_0_name,
+		(select l.name from locations l where lid = r.day5_1) day5_1_name ,
+		(select l.name from locations l where lid = r.day5_2) day5_2_name ,
+		(select l.name from locations l where lid = r.day5_3) day5_3_name,
+		(select l.name from locations l where lid = r.day6_0) day6_0_name ,
+		(select l.name from locations l where lid = r.day6_1) day6_1_name ,
+		(select l.name from locations l where lid = r.day6_2) day6_2_name,
+		(select l.name from locations l where lid = r.day6_3) day6_3_name,
+		(select l.name from locations l where lid = r.day7_0) day7_0_name,
+		(select l.name from locations l where lid = r.day7_1) day7_1_name ,
+		(select l.name from locations l where lid = r.day7_2) day7_2_name ,
+		(select l.name from locations l where lid = r.day7_3) day7_3_name ,
+
+		(select l.img from locations l where lid = r.day1_0) day1_0_img,
+		(select l.img from locations l where lid = r.day1_1) day1_1_img,
+		(select l.img from locations l where lid = r.day1_2) day1_2_img,
+		(select l.img from locations l where lid = r.day1_3) day1_3_img,
+		(select l.img from locations l where lid = r.day2_0) day2_0_img,
+		(select l.img from locations l where lid = r.day2_1) day2_1_img,
+		(select l.img from locations l where lid = r.day2_2) day2_2_img,
+		(select l.img from locations l where lid = r.day2_3) day2_3_img,
+		(select l.img from locations l where lid = r.day3_0) day3_0_img,
+		(select l.img from locations l where lid = r.day3_1) day3_1_img,
+		(select l.img from locations l where lid = r.day3_2) day3_2_img,
+		(select l.img from locations l where lid = r.day3_3) day3_3_img,
+		(select l.img from locations l where lid = r.day4_0) day4_0_img,
+		(select l.img from locations l where lid = r.day4_1) day4_1_img,
+		(select l.img from locations l where lid = r.day4_2) day4_2_img,
+		(select l.img from locations l where lid = r.day4_3) day4_3_img,
+		(select l.img from locations l where lid = r.day5_0) day5_0_img,
+		(select l.img from locations l where lid = r.day5_1) day5_1_img ,
+		(select l.img from locations l where lid = r.day5_2) day5_2_img ,
+		(select l.img from locations l where lid = r.day5_3) day5_3_img,
+		(select l.img from locations l where lid = r.day6_0) day6_0_img ,
+		(select l.img from locations l where lid = r.day6_1) day6_1_img ,
+		(select l.img from locations l where lid = r.day6_2) day6_2_img,
+		(select l.img from locations l where lid = r.day6_3) day6_3_img,
+		(select l.img from locations l where lid = r.day7_0) day7_0_img,
+		(select l.img from locations l where lid = r.day7_1) day7_1_img ,
+		(select l.img from locations l where lid = r.day7_2) day7_2_img ,
+		(select l.img from locations l where lid = r.day7_3) day7_3_img ,
+
+		(select l.site from locations l where lid = r.day1_0) day1_0_site,
+		(select l.site from locations l where lid = r.day1_1) day1_1_site,
+		(select l.site from locations l where lid = r.day1_2) day1_2_site,
+		(select l.site from locations l where lid = r.day1_3) day1_3_site,
+		(select l.site from locations l where lid = r.day2_0) day2_0_site,
+		(select l.site from locations l where lid = r.day2_1) day2_1_site,
+		(select l.site from locations l where lid = r.day2_2) day2_2_site,
+		(select l.site from locations l where lid = r.day2_3) day2_3_site,
+		(select l.site from locations l where lid = r.day3_0) day3_0_site,
+		(select l.site from locations l where lid = r.day3_1) day3_1_site,
+		(select l.site from locations l where lid = r.day3_2) day3_2_site,
+		(select l.site from locations l where lid = r.day3_3) day3_3_site,
+		(select l.site from locations l where lid = r.day4_0) day4_0_site,
+		(select l.site from locations l where lid = r.day4_1) day4_1_site,
+		(select l.site from locations l where lid = r.day4_2) day4_2_site,
+		(select l.site from locations l where lid = r.day4_3) day4_3_site,
+		(select l.site from locations l where lid = r.day5_0) day5_0_site,
+		(select l.site from locations l where lid = r.day5_1) day5_1_site ,
+		(select l.site from locations l where lid = r.day5_2) day5_2_site ,
+		(select l.site from locations l where lid = r.day5_3) day5_3_site,
+		(select l.site from locations l where lid = r.day6_0) day6_0_site ,
+		(select l.site from locations l where lid = r.day6_1) day6_1_site ,
+		(select l.site from locations l where lid = r.day6_2) day6_2_site,
+		(select l.site from locations l where lid = r.day6_3) day6_3_site,
+		(select l.site from locations l where lid = r.day7_0) day7_0_site,
+		(select l.site from locations l where lid = r.day7_1) day7_1_site ,
+		(select l.site from locations l where lid = r.day7_2) day7_2_site ,
+		(select l.site from locations l where lid = r.day7_3) day7_3_site,
+		
+		(select l.latitude from locations l where lid = r.day1_0) day1_0_latitude,
+		(select l.latitude from locations l where lid = r.day1_1) day1_1_latitude,
+		(select l.latitude from locations l where lid = r.day1_2) day1_2_latitude,
+		(select l.latitude from locations l where lid = r.day1_3) day1_3_latitude,
+		(select l.latitude from locations l where lid = r.day2_0) day2_0_latitude,
+		(select l.latitude from locations l where lid = r.day2_1) day2_1_latitude,
+		(select l.latitude from locations l where lid = r.day2_2) day2_2_latitude,
+		(select l.latitude from locations l where lid = r.day2_3) day2_3_latitude,
+		(select l.latitude from locations l where lid = r.day3_0) day3_0_latitude,
+		(select l.latitude from locations l where lid = r.day3_1) day3_1_latitude,
+		(select l.latitude from locations l where lid = r.day3_2) day3_2_latitude,
+		(select l.latitude from locations l where lid = r.day3_3) day3_3_latitude,
+		(select l.latitude from locations l where lid = r.day4_0) day4_0_latitude,
+		(select l.latitude from locations l where lid = r.day4_1) day4_1_latitude,
+		(select l.latitude from locations l where lid = r.day4_2) day4_2_latitude,
+		(select l.latitude from locations l where lid = r.day4_3) day4_3_latitude,
+		(select l.latitude from locations l where lid = r.day5_0) day5_0_latitude,
+		(select l.latitude from locations l where lid = r.day5_1) day5_1_latitude ,
+		(select l.latitude from locations l where lid = r.day5_2) day5_2_latitude ,
+		(select l.latitude from locations l where lid = r.day5_3) day5_3_latitude,
+		(select l.latitude from locations l where lid = r.day6_0) day6_0_latitude ,
+		(select l.latitude from locations l where lid = r.day6_1) day6_1_latitude ,
+		(select l.latitude from locations l where lid = r.day6_2) day6_2_latitude,
+		(select l.latitude from locations l where lid = r.day6_3) day6_3_latitude,
+		(select l.latitude from locations l where lid = r.day7_0) day7_0_latitude,
+		(select l.latitude from locations l where lid = r.day7_1) day7_1_latitude ,
+		(select l.latitude from locations l where lid = r.day7_2) day7_2_latitude ,
+		(select l.latitude from locations l where lid = r.day7_3) day7_3_latitude,
+		
+		(select l.longitude from locations l where lid = r.day1_0) day1_0_longitude,
+		(select l.longitude from locations l where lid = r.day1_1) day1_1_longitude,
+		(select l.longitude from locations l where lid = r.day1_2) day1_2_longitude,
+		(select l.longitude from locations l where lid = r.day1_3) day1_3_longitude,
+		(select l.longitude from locations l where lid = r.day2_0) day2_0_longitude,
+		(select l.longitude from locations l where lid = r.day2_1) day2_1_longitude,
+		(select l.longitude from locations l where lid = r.day2_2) day2_2_longitude,
+		(select l.longitude from locations l where lid = r.day2_3) day2_3_longitude,
+		(select l.longitude from locations l where lid = r.day3_0) day3_0_longitude,
+		(select l.longitude from locations l where lid = r.day3_1) day3_1_longitude,
+		(select l.longitude from locations l where lid = r.day3_2) day3_2_longitude,
+		(select l.longitude from locations l where lid = r.day3_3) day3_3_longitude,
+		(select l.longitude from locations l where lid = r.day4_0) day4_0_longitude,
+		(select l.longitude from locations l where lid = r.day4_1) day4_1_longitude,
+		(select l.longitude from locations l where lid = r.day4_2) day4_2_longitude,
+		(select l.longitude from locations l where lid = r.day4_3) day4_3_longitude,
+		(select l.longitude from locations l where lid = r.day5_0) day5_0_longitude,
+		(select l.longitude from locations l where lid = r.day5_1) day5_1_longitude ,
+		(select l.longitude from locations l where lid = r.day5_2) day5_2_longitude ,
+		(select l.longitude from locations l where lid = r.day5_3) day5_3_longitude,
+		(select l.longitude from locations l where lid = r.day6_0) day6_0_longitude ,
+		(select l.longitude from locations l where lid = r.day6_1) day6_1_longitude ,
+		(select l.longitude from locations l where lid = r.day6_2) day6_2_longitude,
+		(select l.longitude from locations l where lid = r.day6_3) day6_3_longitude,
+		(select l.longitude from locations l where lid = r.day7_0) day7_0_longitude,
+		(select l.longitude from locations l where lid = r.day7_1) day7_1_longitude ,
+		(select l.longitude from locations l where lid = r.day7_2) day7_2_longitude ,
+		(select l.longitude from locations l where lid = r.day7_3) day7_3_longitude
+		
+
+		from routemaps r where mid = #{value};
+	</select>
 </mapper>

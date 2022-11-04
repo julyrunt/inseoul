@@ -15,8 +15,10 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="com/inseoul/mybatis/LodgmentMapper.xml" />
+	    <mapper resource="com/inseoul/mybatis/LodgmentMapper.xml" />
 		<mapper resource="com/inseoul/mybatis/PlanMapper.xml" />
 		<mapper resource="com/inseoul/mybatis/ProfileDataMapper.xml" />
+		<mapper resource="com/inseoul/mybatis/TavelsMapper.xml" />
+		<mapper resource="com/inseoul/mybatis/FestivalMapper.xml" />
 	</mappers>
 </configuration>

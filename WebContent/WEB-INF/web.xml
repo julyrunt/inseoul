@@ -25,12 +25,30 @@
     <servlet-name>commandServlet2</servlet-name>
     <servlet-class>com.inseoul.controller.LodgmentsCotroller</servlet-class>
   </servlet>
- <servlet-mapping>
+<servlet-mapping>
     <servlet-name>MarkercommandServlet</servlet-name>
     <url-pattern>*.mk</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>MarkercommandServlet</servlet-name>
-    <servlet-class>com.inseoul.controller.MarkerControllerServlet</servlet-class>
+    <servlet-class>com.inseoul.controller.PlanControllerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>tavelsServlet</servlet-name>
+    <url-pattern>*.tv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>tavelsServlet</servlet-name>
+    <servlet-class>com.inseoul.controller.TravelsController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>festival</servlet-name>
+    <url-pattern>*.val</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>festival</servlet-name>
+    <servlet-class>com.inseoul.controller.FestivalController</servlet-class>
   </servlet>
 </web-app>
