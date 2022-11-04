@@ -72,9 +72,9 @@
 			
 			<div class="with-midbox">
 				<jsp:include page="board-sidebox.jsp"/>
-				<div class="with-topsection">
-					<p>여행계획 공유해요</p> 
-				</div>
+<!-- 				<div class="with-topsection"> -->
+<!-- 					<p>여행계획 공유해요</p>  -->
+<!-- 				</div> -->
 				
 				<div id="with-contentsAll">
 				<c:forEach var="x" begin="0" end="${lids.size() -1}">
@@ -89,7 +89,7 @@
 						<div class="with-contents-lefttext">
 						<ul>
 						<li class="txt_hide"> <h4>${lids.get(x).getNick() }</h4> <li>
-						<li class="tit"> ${lids.get(x).getTitle()} <span class="writedate"><fm:formatDate value="${lids.get(x).getWriteday()}" pattern="yyyy-MM-dd"/></span></li>
+						<li class="tit"> ${lids.get(x).getTitle()} <fm:formatDate value="${lids.get(x).getWriteday()}" pattern="yyyy-MM-dd"/> </li>
 						<li class="schedule"><span class="ng-star-inserted">${lids.get(x).getDay1_0_name()} </span> 
 						<c:if test="${lids.get(x).getDay1_1() !=null}">
 							<span class="ng-star-inserted">${lids.get(x).getDay1_1_name()}</span>
@@ -121,7 +121,7 @@
 						<c:if test="${lids.get(x).getDay7_2() !=null}"><span class="ng-star-inserted">${lids.get(x).getDay7_2_name() }</span></c:if>
 						<c:if test="${lids.get(x).getDay7_3() !=null}"><span class="ng-star-inserted">${lids.get(x).getDay7_3_name() }</span></c:if>
 						</li>
-						<li class="date">일정 : <fm:formatDate value="${lids.get(x).getPlan_start()}" pattern="yyyy-MM-dd"/> ~ <fm:formatDate value="${lids.get(x).getPlan_end()}" pattern="yyyy-MM-dd"/> </li>
+						<li class="date"><fm:formatDate value="${lids.get(x).getPlan_start()}" pattern="yyyy-MM-dd"/> ~ <fm:formatDate value="${lids.get(x).getPlan_end()}" pattern="yyyy-MM-dd"/> </li>
 						<li>
 							<ul class="ico_wrap">
 							<li></li>

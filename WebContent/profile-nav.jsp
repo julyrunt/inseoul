@@ -12,6 +12,16 @@
 		</a>
 	</li>
 	<li>
+		<a href="../message/list.pr">
+			<span class="material-symbols-outlined">
+				mail
+			</span>
+			<span class="symbol-label">
+				쪽지
+			</span>
+		</a>
+	</li>
+	<li>
 		<a href="../receipt/list.pr">
 			<span class="material-symbols-outlined">
 				receipt

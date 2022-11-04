@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------------- 
+ * 프로필 네비게이션
+ * ---------------------------------------------------------------------------------------------------- */
+#section-nav li:nth-child(2) {
+	font-weight: bold;
+}
+/* ---------------------------------------------------------------------------------------------------- 
+ * 
+ * ---------------------------------------------------------------------------------------------------- */
+#article-header {
+	display: flex;
+	min-height: 483px;
+}
+
+#article-header .user-list {
+	flex-basis: 300px;
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .chat-view {
+	flex-grow: 1;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .chat-view .chat-contents {
+	height: calc(100% - 60px);
+}
+
+#article-header .chat-view .chat-input {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#article-header .chat-input {
+	padding: 12px;
+	box-sizing: border-box;
+}
+
+#article-header .chat-input .message {
+	display: block;
+	width: calc(100% - 10px);
+	height: 40px;
+	padding-left: 20px;
+	border: none;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#article-header .chat-input .message:focus {
+	border: none;
+}
+
+#article-header .chat-input .material-symbols-outlined {
+	position: relative;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+ * 페이지 버튼 스타일 시트
+ * ----------------------------------------------------------------------------------------------------
+ * 	footer#article-footer
+ *		div.paging
+ *			div.paging-buttons
+ *				button * 5+
+ * ---------------------------------------------------------------------------------------------------- */
+#article-footer .paging-buttons {
+	display: flex;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+#article-footer .paging-buttons * {
+	min-width: 32px;
+}
