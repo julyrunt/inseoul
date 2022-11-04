@@ -79,8 +79,14 @@
 	<section>
 		<div class="tabmenu">
 			<ul>
-				<li id="tab1" class="btnCon"><input type="radio" name="tabmenu"
-					id="tabmenu1" checked> <label for="tabmenu1">객실정보&예약</label>
+				<li id="tab1" class="btnCon">
+					<c:if test="${param.category == 'list' || param.category == null}" >
+						<input type="radio" name="tabmenu" id="tabmenu1" checked="checked">
+					</c:if>
+					<c:if test="${param.category != 'list' && param.category != null}" >
+						<input type="radio" name="tabmenu" id="tabmenu1">
+					</c:if>
+					<label for="tabmenu1">객실정보&예약</label>
 					<div class="tabCon">
 						<div id="room_bigbox">
 							<div id="date_sel">
@@ -118,10 +124,17 @@
 									</div>
 								</div>
 							</c:forEach>
+							<input type="hidden" id="capacity" value="${capacity}">
 						</div>
 					</div></li>
-				<li id="tab2" class="btnCon"><input type="radio" name="tabmenu"
-					id="tabmenu2"> <label for="tabmenu2">숙소안내</label>
+				<li id="tab2" class="btnCon">
+					<c:if test="${param.category == 'info' }" >
+						<input type="radio" name="tabmenu" id="tabmenu2" checked="checked">
+					</c:if>
+					<c:if test="${param.category != 'info' }" >
+						<input type="radio" name="tabmenu" id="tabmenu2">
+					</c:if>
+					<label for="tabmenu2">숙소안내</label>
 					<div class="tabCon">
 						<div id="lodgment_infobox">
 							<h3>주변정보</h3>
@@ -221,8 +234,14 @@
 							</div>
 						</div>
 					</div></li>
-				<li id="tab3" class="btnCon"><input type="radio" name="tabmenu"
-					id="tabmenu3"> <label for="tabmenu3">리뷰</label>
+				<li id="tab3" class="btnCon">
+					<c:if test="${param.category == 'review' }" >
+						<input type="radio" name="tabmenu" id="tabmenu3" checked="checked" />
+					</c:if>
+					<c:if test="${param.category != 'review' }" >
+						<input type="radio" name="tabmenu" id="tabmenu3" />
+					</c:if>
+					<label for="tabmenu3">리뷰</label>
 					<div class="tabCon">
 						<article>
 								<div class="reviewbox">
@@ -234,7 +253,6 @@
 											<th width="100px">작성시간</th>
 										</tr>
 										<c:forEach var="review" items="${review}" varStatus="status">
-
 											<tr class='item'>
 												<td>${review.review_num}</td>
 												<td class='title_td'><span>${review.review_title}</span></td>
@@ -256,7 +274,6 @@
 															</a>
 														</div></td>
 												</tr>
-
 											</c:if>
 											<c:if test="${review.review_uid != uid}">
 												<tr class='hide'>
@@ -272,7 +289,7 @@
 											<input type="button" value="리뷰쓰기" style="margin-left: 1065px;" onclick="write_review()">
 										</c:if>
 										<c:if test="${uid == null}">
-											<input type="button" value="리뷰쓰기" style="margin-left: 1065px;" onclick="alert('로그인이 필요합니다.')">
+											<input type="button" value="리뷰쓰기" style="margin-left: 1065px;" onclick="login_()">
 										</c:if>
 									</div>
 								</div>

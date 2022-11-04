@@ -1,4 +1,6 @@
 window.onload = function (){
+//history.replaceState({},null,location.pathname);
+
 /* 체크인 체크아웃 날짜 초기값 오늘로 적용 */
 var start_date = document.getElementById('start_date');
 var end_date = document.getElementById('end_date');
@@ -37,6 +39,14 @@ $(".tb .item td").click(function() {
 		$(myArticle).addClass('hide').removeClass('show');
 	}
 });
+
+//$('#modal').on('click', function(){
+//	alert('전체요');
+//})
+//
+//$('.modal-window').on('click', function(){
+//	alert('창이요');
+//})
 
 }
 /* 현재 시간을 yyyy-mm-dd 로 변환해서 리턴 */
@@ -81,7 +91,10 @@ function reserv(roomid, price, capacity){
 	
 	$(location).attr("href", url);
 }
-
+function login_(){
+	alert("로그인이 필요합니다");
+	location.href= "../log-in/.";
+}
 
 
 function write_review(){
@@ -94,11 +107,22 @@ function modaloff(){
 	modal.style.display = 'none';
 }
 
+$(document).click(function(e){
+	var modal = $('#modal');
+//	if(!$(e.target).is("#follow-page .follow > span:last-child") && !$(e.target).is("#follow-page .follow > span:last-child *"))
+	if(!$(e.target).hasClass('.modal-window') && modal.style.display == 'flex'){
+		alert('밖');
+	}
+})
+
 /* 모달 리뷰 작성 */
 function reviewWrite(uid){
 	var title = document.getElementById('re_title').value;
 	var contents = document.getElementById('re_contents').value;
 	var warning = document.getElementById('warning');
+	var capacity = document.getElementById('capacity').value;
+	
+	var hid = $('.hid').val();
 	
 	if(title == ''){
 		warning.innerText = "제목을 작성해주세요";
@@ -109,15 +133,6 @@ function reviewWrite(uid){
 		return false;
 	}
 	
-	$.ajax({
-		url : 'review_write.lm',
-		data : {'uid' : uid, 'title' : title, 'contents' : contents},
-		dataType : 'html',
-		success : function(data) {
-			$(".reviewbox").html(data);
-		},
-		error : function() {
-			alert("fail");
-		}
-	});
+	location.href = "review_write.lm?title="+title+"&contents="+contents+"&hid="+hid+"&capacity="+capacity;
+
 }

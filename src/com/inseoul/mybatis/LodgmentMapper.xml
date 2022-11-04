@@ -89,5 +89,8 @@
 		SELECT lr.*, users.nick FROM lodgment_review lr join users on lr.review_uid=users.uid where review_hid = #{hid}
 	</select>
 	
+	<insert id="review_write" parameterType="com.inseoul.vo.Lodgment_ReviewBean">
+		insert into `lodgment_review` (review_hid, review_uid, review_title, review_contents) values(#{review_hid}, #{review_uid}, #{review_title}, #{review_contents})
+	</insert>
 	
 </mapper>

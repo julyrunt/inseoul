@@ -21,9 +21,9 @@
 		</div>
 		<nav class="top-nav">
 			<ul>
-				<li><a href="#"> 정보 </a></li>
+				<li><a href="travels/locationIndex.tv"> 정보 </a></li>
 				<li><a href="plan/markerList.mk"> 여행계획 짜기 </a></li>
-				<li><a href="board" target="_self"> 커뮤니티 </a></li>
+				<li><a href="plan/planselect.mk" target="_self"> 커뮤니티 </a></li>
 				<li><a href="profile/timeline.pr" target="_self">마이페이지</a></li>
 							   
 			</ul>
@@ -32,21 +32,18 @@
 			<div class="gnb-box">
 				<div class="gnb-items">
 					<ul>
-						<li><a href="" target="_self"> 관광지 정보 </a></li>
-						<li><a href="" target="_self"> 맛집 정보 </a></li>
-						<li><a href="" target="_self"> 박물관 정보 </a></li>
+						<li><a href="travels/locationIndex.tv" target="_self"> 관광지 정보 </a></li>
 						<li><a href="lodgment/lodgment.lm" target="_self"> 숙박 정보 </a></li>
-						<li><a href="" target="_self"> 축제 정보 </a></li>
+						<li><a href="festival/festivalList.val" target="_self"> 축제 정보 </a></li>
 					</ul>
 					<ul>
 						<li><a href="plan/markerList.mk" target="_self"> 여행계획짜기 </a></li>
 					</ul>
 					<ul>
-						<li><a href="board" target="_self"> 여행일정공유 </a></li>
+						<li><a href="plan/planselect.mk" target="_self"> 여행일정공유 </a></li>
 						<li><a href="board/boardList.with" target="_self"> 그룹여행모집 </a></li>
-						<li><a href="" target="_self"> 여행리뷰 </a></li>
+						<li><a href="board/travelsList.tv" target="_self"> 여행기 </a></li>
 						<li><a href="board/qnaList.qa" target="_self"> 질답게시판 </a></li>
-						<li><a href="" target="_self"> 관광지월드컵 </a></li>
 					</ul>
 					<ul>
 						<li><a href="profile/timeline.pr" target="_self">프로필</a></li>

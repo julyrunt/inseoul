@@ -26,7 +26,7 @@ public class LodgmentDetailImpl implements CommandInter{
 
 		int hid = Integer.parseInt(request.getParameter("hid"));
 		String capacity = request.getParameter("capacity");
-
+			
 		LodgmentDetailModel model = LodgmentDetailModel.instance();
 		LodgmentsBean list = null;
 		ArrayList <LodgmentRoomBean> roominfo = null;
