@@ -75,7 +75,8 @@ body {
 	width: fit-content;
 	height: inherit;
 	margin-top: 0;
-	margin-left: calc(50% - 440px);
+/* 	margin-left: calc(50% - 440px); */
+	margin: 0 auto;
 }
 
 .top-nav ul {
@@ -127,8 +128,9 @@ body {
 
 .gnb-items {
 	width: fit-content;
-	margin-top: 20px;
-	margin-left: calc(50% - 440px);
+/* 	margin-top: 20px; */
+/* 	margin-left: calc(50% - 440px); */
+	margin: 20px auto 0 auto;
 	font-size: 0;
 }
 

@@ -1,6 +1,8 @@
 package com.inseoul.model.lodgments;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -58,4 +60,13 @@ public class LodgmentDetailModel {
 		sqlSession.close();
 		return review;
 	}
+	/* 리뷰 작성  */
+	public void writeReivew(Lodgment_ReviewBean article) {
+		System.out.println("writeReivew 도착");
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.insert("review_write", article);
+		sqlSession.commit();
+		sqlSession.close();
+	}
+	
 }
