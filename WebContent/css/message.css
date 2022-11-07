@@ -8,36 +8,37 @@
 /* ---------------------------------------------------------------------------------------------------- 
  * 
  * ---------------------------------------------------------------------------------------------------- */
-#article-header {
+main article {
 	display: flex;
 	min-height: 483px;
+	padding: 0;
 }
 
-#article-header .user-list {
+main article .user-list {
 	flex-basis: 300px;
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
 	border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#article-header .chat-view {
+main article .chat-view {
 	flex-grow: 1;
 	border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#article-header .chat-view .chat-contents {
+main article .chat-view .chat-contents {
 	height: calc(100% - 60px);
 }
 
-#article-header .chat-view .chat-input {
+main article .chat-view .chat-input {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#article-header .chat-input {
+main article .chat-input {
 	padding: 12px;
 	box-sizing: border-box;
 }
 
-#article-header .chat-input .message {
+main article .chat-input .message {
 	display: block;
 	width: calc(100% - 10px);
 	height: 40px;
@@ -47,18 +48,24 @@
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-#article-header .chat-input .message:focus {
+main article .chat-input .message:focus {
 	border: none;
 }
 
-#article-header .chat-input .material-symbols-outlined {
+main article .chat-input .material-symbols-outlined {
 	position: relative;
+    top: -32px;
+    right: calc(-100% + 48px);
+    opacity: 30%;
+    cursor: pointer;
 }
-
+main article .chat-input .material-symbols-outlined:hover {
+	opacity: 50%;
+}
 /* ----------------------------------------------------------------------------------------------------
  * 페이지 버튼 스타일 시트
  * ----------------------------------------------------------------------------------------------------
- * 	footer#article-footer
+ * 	footer#main article-footer
  *		div.paging
  *			div.paging-buttons
  *				button * 5+
