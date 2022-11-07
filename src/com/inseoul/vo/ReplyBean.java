@@ -3,7 +3,7 @@ package com.inseoul.vo;
 import java.sql.Date;
 
 public class ReplyBean {
-  private int rid, aid, bid, uid, modified;
+  private int rid, aid, bid, uid, tid, modified;
   private String photo, nick, contents;
   private Date writedate;
   public int getRid() {
@@ -60,5 +60,11 @@ public class ReplyBean {
   public void setWritedate(Date writedate) {
     this.writedate = writedate;
   }
+public int getTid() {
+	return tid;
+}
+public void setTid(int tid) {
+	this.tid = tid;
+}
   
 }
