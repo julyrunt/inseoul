@@ -46,6 +46,9 @@
 		<main>
 			<section>
 				<header id="article-header">
+					
+				</header>
+				<article>
 					<div class="user-list"></div>
 					<div class="chat-view">
 						<div class="chat-contents">
@@ -58,9 +61,6 @@
 							</span>
 						</div>
 					</div>
-				</header>
-				<article>
-					
 				</article>
 				<footer id="article-footer">
 					
