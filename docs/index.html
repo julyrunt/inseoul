@@ -33,27 +33,31 @@
 	<div class="slider-nav"></div>
 	<script type="text/javascript">
 		$(function() {
-			const max = 50;
-			let page;
-			for (let i = 1; i <= max; i++) {
-				page = "<div><img src='images/page"+ String(i).padStart(2,'0') + ".PNG' /></div>";
-				$('.slider-for').append(page);
-				$('.slider-nav').append(page);
-			};
-			$('.slider-for').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-				fade: true,
-				asNavFor: '.slider-nav'
-			});
-			$('.slider-nav').slick({
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				asNavFor: '.slider-for',
-				dots: false,
-				centerMode: true,
-				focusOnSelect: true
+			const fs = require('fs');
+			const dir = './images';
+			fs.readdir(dir, (err, files) => {
+  				const max = files.length;
+				let page;
+				for (let i = 1; i <= max; i++) {
+					page = "<div><img src='images/page"+ String(i).padStart(2,'0') + ".PNG' /></div>";
+					$('.slider-for').append(page);
+					$('.slider-nav').append(page);
+				};
+				$('.slider-for').slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					fade: true,
+					asNavFor: '.slider-nav'
+				});
+				$('.slider-nav').slick({
+					slidesToShow: 5,
+					slidesToScroll: 1,
+					asNavFor: '.slider-for',
+					dots: false,
+					centerMode: true,
+					focusOnSelect: true
+				});
 			});
 		});
 	</script>
