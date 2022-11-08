@@ -5,19 +5,35 @@
   <title>docs</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
     $(function() {
       for (var i = 1; i <= 50; i++) {
-        $(document.body).append("<img src='images/page"+ String(i).padStart(2,'0') + ".PNG' />");
+				var item = "<div><img src='images/page"+ String(i).padStart(2,'0') + ".PNG' /></div>";
+        $('.slider-for').append(item);
+				$('.slider-nav').append(item);
       };
-    });
+			$('.slider-for').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				fade: true,
+				asNavFor: '.slider-nav'
+			});
+			$('.slider-nav').slick({
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				asNavFor: '.slider-for',
+				dots: true,
+				centerMode: true,
+				focusOnSelect: true
+			});
+		});
   </script>
-  <style>
-  img {
-    display:block;
-  }
-  </style>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
+	<div class="slider-for"></div>
+	<div class="slider-nav"></div>
 </body>
 </html>
