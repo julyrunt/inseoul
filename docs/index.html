@@ -7,12 +7,14 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script type="text/javascript">
-    $(function() {
-      for (var i = 1; i <= 50; i++) {
-				var item = "<div><img src='images/page"+ String(i).padStart(2,'0') + ".PNG' /></div>";
-        $('.slider-for').append(item);
-				$('.slider-nav').append(item);
-      };
+		$(function() {
+			const max = 50;
+			let page;
+			for (let i = 1; i <= max; i++) {
+				page = "<div><img src='images/page"+ String(i).padStart(2,'0') + ".PNG' /></div>";
+				$('.slider-for').append(page);
+				$('.slider-nav').append(page);
+			};
 			$('.slider-for').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
