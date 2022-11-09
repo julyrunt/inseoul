@@ -1,4 +1,4 @@
 # inseoul
 
 ## 결과 보고서
-https://julyrunt.github.io/inseoul/
+[2011-11-08 작성](https://julyrunt.github.io/inseoul/)
