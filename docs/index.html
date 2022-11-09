@@ -13,37 +13,53 @@
 			padding: 0;
 			margin: 0;
 		}
-		.slider-for, .slider-nav {
+		/* ----------------------------------------------------------------------------------------------------
+		 * 슬라이더 프리뷰 스타일 시트 
+		 * ---------------------------------------------------------------------------------------------------- */
+		.slider-for {
 			width: 1280px;
 			max-width: 100vw;
 			padding: 0;
 			margin: 0 auto;
 		}
-		.slider-for {
+		.slider-for .slick-slide.slick-current {
+    			height: 720px;
 			max-height: calc(80vh - 27px);
-		}
-		.slider-for div {
-			max-height: inherit;
-		}
-		.slider-nav {
-			max-height: 20vh;
-		}
-		.slider-for img, .slider-nav img{
-			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
 		}
 		.slider-for img {
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+		}
+		/* ----------------------------------------------------------------------------------------------------
+		 * 슬라이더 네비게이션 스타일 시트
+		 * ---------------------------------------------------------------------------------------------------- */
+		.slider-nav {
+			width: 1280px;
+			max-width: 100vw;
+			max-height: 20vh;
+			padding: 0;
+			margin: 0 auto;
+		}
+		.slider-nav .slick-slide {
+			max-height: 20vh;
 		}
 		.slider-nav img {
 			width: 98%;
 			object-fit: cover;
 			margin: 4px;
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
 		}
+		/* ----------------------------------------------------------------------------------------------------
+		 * 슬라이더 이전, 다음 버튼 스타일 시트 
+		 * ---------------------------------------------------------------------------------------------------- */
 		.slick-prev:before, .slick-next:before {
 			color: black;
 		}
+		/* ----------------------------------------------------------------------------------------------------
+		 * 슬라이더 도트 스타일 시트
+		 * ---------------------------------------------------------------------------------------------------- */
 		.slick-dotted.slick-slider {
 			margin: 0;
 		}
